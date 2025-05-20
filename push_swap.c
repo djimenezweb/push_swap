@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/20 12:56:51 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/20 15:49:46 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -22,7 +22,8 @@ void	print_list(t_list *lst)
 {
 	while (lst)
 	{
-		ft_printf("%s\n", (char *)lst->content);
+		int *num = (int *)lst->content;
+		ft_printf("%d\n", *num);
 		lst = lst->next;
 	}
 }
@@ -40,9 +41,9 @@ char	**split_arguments(int argc, char *argv[])
 	else
 	{
 		// Warning: arr is not a deep copy, just a shifted pointer.
-		// If you need to modify the content or free it, you should allocate
-		// and copy each string. Otherwise, this shallow copy is perfectly
-		// fine for read-only iteration or processing.
+		// If you need to modify the content or free it, you should
+		// allocate and copy each string. Otherwise, this shallow copy
+		// is perfectly fine for read-only iteration or processing.
 		arr = argv + 1;
 	}
 	return (arr);
@@ -50,37 +51,37 @@ char	**split_arguments(int argc, char *argv[])
 
 t_list*	initialize(char **arr)
 {
-	t_list	*a;
+	t_list	*list;
 	t_list	*node;
 	int		i;
-	int		*num_ptr;
 
-	a = NULL;
+	list = NULL;
 	i = 0;
 	while (arr[i])
 	{
-		// *num_ptr = ft_atoi(arr[i]);
-		// ft_printf("%i: %s = %i\n", i, arr[i], num_ptr);
-		// node = ft_lstnew(num_ptr);
-		node = ft_lstnew(arr[i]);
+		int *num_ptr = malloc(sizeof(int));
+		if (!num_ptr)
+			return (NULL);
+		*num_ptr = ft_atoi(arr[i]);
+		node = ft_lstnew(num_ptr);
 		i++;
-		ft_lstadd_back(&a, node);
+		ft_lstadd_back(&list, node);
 	}
-	return (a);
+	return (list);
 }
 
 int	main(int argc, char *argv[])
 {
-	t_list	*a;
-	t_list	*b;
+	t_list	*a_stack;
+	t_list	*b_stack;
 	char	**args;
 
 	if (argc == 1)
 		return (0);
 	args = split_arguments(argc, argv);
-	a = initialize(args);
-	b = NULL;
-	print_list(a);
-	//ft_lstclear(&a, free);
+	a_stack = initialize(args);
+	b_stack = NULL;
+	print_list(a_stack);
+	//ft_lstclear(&a_stack, free);
 	return (0);
 }
