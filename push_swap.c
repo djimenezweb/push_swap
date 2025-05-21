@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-// Print list for testing purposes only
+// Print list (for testing purposes only!!)
 void	print_list(char *title, t_list *lst)
 {
 	int	*num;

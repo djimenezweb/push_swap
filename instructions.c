@@ -28,8 +28,8 @@ void	ft_swap(t_list **stack)
 	*stack = second;
 }
 
-// Take the first element at the top of SRC and put it at the top of DST.
-// Do nothing if SRC is empty.
+// Take the first element at the top of `src` and put it at the top of `dst`.
+// Do nothing if `src` is empty.
 void	ft_push(t_list **src_stack, t_list **dst_stack)
 {
 	t_list	*first;

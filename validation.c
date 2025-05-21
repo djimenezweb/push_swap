@@ -12,14 +12,14 @@
 
 #include "push_swap.h"
 
-// Throw error
+// Throws error and exits.
 static void	error(void)
 {
 	ft_printf("Error\n");
 	exit(2);
 }
 
-// Checks if string has repeated int numbers
+// Checks if array has repeated `int` numbers.
 static void	isduplicated(char **arr)
 {
 	int	i;
@@ -39,18 +39,18 @@ static void	isduplicated(char **arr)
 	}
 }
 
-// Checks if character is digit, '+' or '-'
+// Checks if character is a digit or a `+` or `-` sign.
 static int	ft_issigneddigit(int c)
 {
-	if ((c >= '0' && c <= '9') || c == '-' || c == '+')
+	if (ft_isdigit(c) || c == '-' || c == '+')
 	{
 		return (1);
 	}
 	return (0);
 }
 
-// Converts a string into long number.
-// Returns 0 on error.
+// Converts a string into `long` number.
+// Returns `0` on error.
 static long	ft_atol(const char *str)
 {
 	long	nbr;
