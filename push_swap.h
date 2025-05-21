@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/21 16:05:14 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/21 17:05:44 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -32,6 +32,6 @@ void	validate(char **arr);
 void	ft_swap(t_list	**stack);
 void	ft_push(t_list	**src_stack, t_list	**dst_stack);
 void	ft_rotate(t_list **stack);
-//void	ft_rrotate(t_list **stack);
+void	ft_rrotate(t_list **stack);
 
 #endif

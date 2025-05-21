@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:30:20 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/21 16:53:15 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/21 17:05:13 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -47,6 +47,51 @@ void	ft_rotate(t_list **stack)
 {
 	t_list	*first;
 	t_list	*second;
+	t_list	*last;
+
+	if (!stack || !*stack || (*stack)->next == NULL)
+		return ;
+	first = *stack;
+	second = first->next;
+	last = *stack;
+	while (last->next)
+	{
+		last = last->next;
+	}
+	first->next = NULL;
+	last->next = first;
+	*stack = second;
+}
+
+// Shift down all elements of stack a by 1.
+// The last element becomes the first one.
+void	ft_rrotate(t_list **stack)
+{
+	t_list	*first;
+	t_list	*second;
+	t_list	*prev_last;
+	t_list	*last;
+
+	if (!stack || !*stack || (*stack)->next == NULL)
+		return ;
+	first = *stack;
+	second = first->next;
+	last = *stack;
+	while (last->next)
+	{
+		prev_last = last;
+		last = last->next;
+	}
+	prev_last->next = NULL;
+	last->next = first;
+	*stack = last;
+}
+
+// Swaps first & last nodes
+/* void	ft_rotate(t_list **stack)
+{
+	t_list	*first;
+	t_list	*second;
 	t_list	*prev_last;
 	t_list	*last;
 
@@ -67,7 +112,7 @@ void	ft_rotate(t_list **stack)
 		return;
 	}
 
-	// Second-to-last ponts to first
+	// Second-to-last points to first
 	prev_last->next = first;
 	// Old head becomes new tail
 	first->next = NULL;
@@ -75,4 +120,4 @@ void	ft_rotate(t_list **stack)
 	last->next = second;
 	// Update head pointer
 	*stack = last;
-}
+} */
