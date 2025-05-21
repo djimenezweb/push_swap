@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/21 13:39:56 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:43:11 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -19,7 +19,7 @@ static void	error(void)
 	exit(2);
 }
 
-// Checks if string has repeated numbers
+// Checks if string has repeated int numbers
 static void	isduplicated(char **arr)
 {
 	int	i;
@@ -77,6 +77,8 @@ static long	ft_atol(const char *str)
 /* Checks for the following errors:
 - Some arguments not being integers
 - Some arguments exceeding the integer limits
+  INT_MIN:	-2.147.483.648
+  INT_MAX:	 2.147.483.647
 - Presence of duplicates */
 void	validate(char **arr)
 {
