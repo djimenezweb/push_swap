@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
@@ -6,19 +6,38 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/21 12:32:43 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:21:20 by danielji         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "push_swap.h"
 
-void	error(void)
+static void	error(void)
 {
 	ft_printf("Error\n");
 	exit(2);
 }
 
-int	ft_issigneddigit(int c)
+static void	isduplicated(char **arr)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (arr[i])
+	{
+		j = 1;
+		while (arr[i + j])
+		{
+			if (ft_atoi(arr[i]) == ft_atoi(arr[i+j]))
+				error();
+			j++;
+		}
+		i++;
+	}
+}
+
+static int	ft_issigneddigit(int c)
 {
 	if ((c >= '0' && c <= '9') || c == '-' || c == '+')
 	{
@@ -27,7 +46,7 @@ int	ft_issigneddigit(int c)
 	return (0);
 }
 
-long	ft_atol(const char *str)
+static long	ft_atol(const char *str)
 {
 	long	nbr;
 	int		sign;
@@ -73,4 +92,5 @@ void	validate(char **arr)
 		}
 		i++;
 	}
+	isduplicated(arr);
 }
