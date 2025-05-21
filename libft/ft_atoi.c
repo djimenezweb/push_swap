@@ -10,16 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Converts the initial portion of the string pointed to by nptr to int.
-Same as strtol(nptr, NULL, 10); except that atoi() does not detect errors.
-
+/* Converts the initial portion of the string pointed to by `nptr` to `int`.
+Same as `strtol(nptr, NULL, 10);` except that `atoi()` does not detect errors.
 The string may begin with an arbitrary amount of white space (as determined by
-isspace(3)) followed by a single optional '+' or '-' sign.
+`isspace(3)`) followed by a single optional `+` or `-` sign.
 The remainder of the string is converted to a long value in the obvious manner,
 stopping at the first character which is not a valid digit in the given base.
-
-Returns the converted value or 0 on error. */
-
+Returns the converted value or `0` on error. */
 int	ft_atoi(const char *str)
 {
 	long	nbr;

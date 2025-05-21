@@ -10,17 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Toma como parámetro un nodo ’lst’ y libera la memoria del contenido
-utilizando la función ’del’ dada como parámetro, además de liberar el nodo.
-La memoria de ’next’ no debe liberarse.
-
-lst:	el nodo a liberar.
-del:	un puntero a la función utilizada para liberar el contenido del nodo.
-
-Función autorizada: free */
-
 #include "libft.h"
 
+/* Takes a node as parameter and frees its content using the function `del`.
+Free the node itself but does NOT free the next node. */
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	del(lst->content);

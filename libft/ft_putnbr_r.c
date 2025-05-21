@@ -12,8 +12,7 @@
 
 #include "libft.h"
 
-// Writes an int number
-// Returns number of characters written
+/* Outputs the integer `n` and returns number of characters written */
 ssize_t	ft_putnbr_r(int n)
 {
 	char	c;

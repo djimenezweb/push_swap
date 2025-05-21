@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Envía el carácter ’c’ al file descriptor especificado. */
-
 #include "libft.h"
 
+/* Outputs the character `c` to the specified file descriptor. */
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);

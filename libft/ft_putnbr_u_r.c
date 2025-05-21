@@ -12,8 +12,7 @@
 
 #include "libft.h"
 
-// Writes an unsigned int number
-// Returns number of characters written
+/* Outputs the unsigned integer `n` and returns number of characters written */
 ssize_t	ft_putnbr_u_r(unsigned int n)
 {
 	char	c;

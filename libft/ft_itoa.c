@@ -10,12 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Utilizando malloc(3), genera una string que represente el valor entero
-recibido como argumento. Los números negativos tienen que gestionarse.
-
-Devuelve la string que represente el número.
-NULL si falla la reserva de memoria. */
-
 #include "libft.h"
 
 static int	numlen(int n)
@@ -26,9 +20,7 @@ static int	numlen(int n)
 	len = 0;
 	num = n;
 	if (num == 0)
-	{
 		len++;
-	}
 	while (num)
 	{
 		len++;
@@ -47,6 +39,8 @@ static int	is_negative(long long *num)
 	return (0);
 }
 
+/* Returns a string representing the integer received
+as an argument or `NULL` if memory allocation fails */
 char	*ft_itoa(int n)
 {
 	int			len;

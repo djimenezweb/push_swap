@@ -10,12 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* The strlen() function calculates the length of the string pointed to by s,
-excluding the terminating null byte ('\0').
-Returns the number of bytes in the string pointed to by s. */
-
 #include "libft.h"
 
+/* Calculates the length of the string pointed to by `s`,
+excluding the terminating null byte (`'\0'`).
+Returns the number of bytes in the string pointed to by `s`. */
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;

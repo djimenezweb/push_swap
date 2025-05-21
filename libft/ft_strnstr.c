@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* The strnstr() function locates the first occurrence of the null-terminated
-string LITTLE in the string BIG, where not more than LEN characters are
-searched. Characters that appear after a ‘\0’ character are not searched.
-
-If LITTLE is an empty string, BIG is returned.
-If LITTLE occurs nowhere in BIG, NULL is returned.
-Returns a pointer to the first character of the first occurrence of LITTLE. */
-
 #include "libft.h"
 
+/* Locates the first occurrence of the null-terminated string `little`
+in the string `big`, where not more than `len` characters are searched.
+Characters that appear after a `‘\0’` are not searched.
+If `little` is an empty string, `big` is returned.
+If `little` occurs nowhere in `big`, `NULL` is returned.
+Returns a pointer to the first character of the first occurrence of `little`. */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	b;

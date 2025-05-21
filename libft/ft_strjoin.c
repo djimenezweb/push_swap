@@ -10,16 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Reserva (con malloc(3)) y devuelve una nueva string, formada por la
-concatenación de ’s1’ y ’s2’.
-
-s1: La primera string.
-s2: La string a añadir a ’s1’.
-
-Devuelve la nueva string o NULL si falla la reserva de memoria. */
-
 #include "libft.h"
 
+/* Allocates memory and returns a new string, which is the result of
+concatenating `s1` and `s2`.*/
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len;

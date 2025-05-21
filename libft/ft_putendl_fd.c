@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Envía la string ’s’ al file descriptor dado, seguido de un salto de línea. */
-
 #include "libft.h"
 
+/* Outputs the string `s` to the specified file descriptor
+followed by a newline */
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);

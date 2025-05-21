@@ -10,12 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Itera la lista ’lst’ y aplica la función ’f’ en el contenido de cada nodo.
-lst:	un puntero al primer nodo.
-f:		un puntero a la función que utilizará cada nodo. */
-
 #include "libft.h"
 
+/* Iterates through the list `lst` and applies the function `f`
+to the content of each node.*/
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)

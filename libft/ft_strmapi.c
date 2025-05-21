@@ -10,16 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Aplica la función ’f’ a cada carácter de la cadena ’s’, pasando su índice
-como primer argumento y el propio carácter como segundo argumento. Se crea
-una nueva cadena (utilizando malloc(3)) para recoger los resultados de las
-sucesivas aplicaciones de ’f’.
-
-Devuelve la string creada tras el correcto uso de ’f’ sobre cada carácter.
-NULL si falla la reserva de memoria. */
-
 #include "libft.h"
 
+/* Applies the function `f` to each character of the string `s`, passing its
+index as the first argument and the character itself as the second.
+A new string is created to store the results from the successive applications
+of `f`.*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	len;

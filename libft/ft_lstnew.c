@@ -10,13 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Crea un nuevo nodo utilizando malloc(3). La variable miembro ’content’
-se inicializa con el contenido del parámetro ’content’.
-La variable ’next’, con NULL.
-Devuelve el nuevo nodo. */
-
 #include "libft.h"
 
+/* Allocates memory and returns a new node.
+The `content` variable is initialized with the given parameter `content`.
+The variable `next` is initialized to `NULL`. */
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;

@@ -10,12 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Returns a pointer to a new string which is a duplicate of the string s.
-Memory for the new string is obtained with malloc(3) and freed with free(3).
-It returns NULL if insufficient memory was available */
-
 #include "libft.h"
 
+/* Returns a pointer to a new string which is a duplicate of the string `s`
+or `NULL` if insufficient memory was available */
 char	*ft_strdup(const char *str)
 {
 	char	*dup;

@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* A cada carácter de la string ’s’, aplica la función ’f’ dando como parámetros
-el índice de cada carácter dentro de ’s’ y la dirección del propio carácter, que
-podrá modificarse si es necesario. */
-
+/* Applies the function `f` to each character of the string passed as argument,
+passing its index as the first argument. Each character is passed by address
+to `f` so it can be modified if necessary.*/
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;

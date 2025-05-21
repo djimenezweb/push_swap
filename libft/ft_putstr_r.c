@@ -12,8 +12,7 @@
 
 #include "libft.h"
 
-// Writes a string character by character
-// Returns number of characters written
+/* Outputs the string `s` and returns number of characters written.*/
 ssize_t	ft_putstr_r(char *s)
 {
 	ssize_t	written;

@@ -10,17 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Reserva (con malloc(3)) y devuelve una substring de la string ’s’. La substr-
-ing empieza desde el índice ’start’ y tiene una longitud máxima ’len’.
-
-s:		La string desde la que crear la substring.
-start:	El índice del caracter en ’s’ desde el que empezar la substring.
-len:	La longitud máxima de la substring.
-
-Devuelve la substring resultante o NULL si falla la reserva de memoria. */
-
 #include "libft.h"
 
+/* Allocates memory and returns a substring from the string `s`.
+The substring starts at index `start` and has a maximum length of `len`. */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;

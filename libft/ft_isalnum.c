@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Returns `1` if character is alphabetic or numeric */
 int	ft_isalnum(int c)
 {
 	if ((c >= '0' && c <= '9')

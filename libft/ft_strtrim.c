@@ -10,18 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Elimina todos los caracteres de la string ’set’ desde el principio y desde
-el final de ’s1’, hasta encontrar un caracter no perteneciente a ’set’.
-La string resultante se devuelve con una reserva de malloc(3).
-
-s1:		La string que debe ser recortada.
-set:	Los caracteres a eliminar de la string.
-
-Devuelve La string recortada o NULL si falla la reserva de memoria.
-
-We check if (start > end) if the input is completely made of characters
-from set. In that case start can become greater than end. */
-
 #include "libft.h"
 
 static int	is_char_in_set(char c, char const *set)
@@ -37,6 +25,11 @@ static int	is_char_in_set(char c, char const *set)
 	return (0);
 }
 
+/* Allocates memory and returns a copy of `s1` with characters from `set`
+removed from the beginning and the end.
+
+In `if (start > end)` we check if the input is completely made of characters
+from `set`. In that case `start` can become greater than `end`. */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
