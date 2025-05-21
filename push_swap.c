@@ -6,17 +6,18 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/21 13:39:56 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/21 16:23:46 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "push_swap.h"
 
 // Print list for testing purposes only
-void	print_list(t_list *lst)
+void	print_list(char *title, t_list *lst)
 {
 	int	*num;
 
+	ft_printf("%s\n", title);
 	while (lst)
 	{
 		num = (int *)lst->content;
@@ -62,7 +63,15 @@ int	main(int argc, char **argv)
 	validate(argv);
 	a_stack = initialize(argv);
 	b_stack = NULL;
-	print_list(a_stack);
+	print_list("Original:", a_stack);
+/*	ft_swap(&a_stack);
+ 	print_list("Swap:", a_stack);
+	ft_push(&a_stack, &b_stack);
+	print_list("Push (a):", a_stack);
+	print_list("Push (b):", b_stack);*/
+	ft_rotate(&a_stack);
+	print_list("Rotate (a):", a_stack);
 	ft_lstclear(&a_stack, free);
+	//ft_lstclear(&b_stack, free);
 	return (0);
 }
