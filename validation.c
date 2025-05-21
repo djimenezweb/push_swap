@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/21 13:21:20 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:33:20 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -29,7 +29,7 @@ static void	isduplicated(char **arr)
 		j = 1;
 		while (arr[i + j])
 		{
-			if (ft_atoi(arr[i]) == ft_atoi(arr[i+j]))
+			if (ft_atoi(arr[i]) == ft_atoi(arr[i + j]))
 				error();
 			j++;
 		}
