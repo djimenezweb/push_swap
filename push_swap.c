@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
@@ -6,60 +6,36 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/20 15:49:46 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/21 12:32:43 by danielji         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
-#include "libft/libft.h"
-
-void	error(void)
-{
-	ft_printf("Error\n");
-	exit(2);
-}
+#include "push_swap.h"
 
 void	print_list(t_list *lst)
 {
+	int	*num;
+
 	while (lst)
 	{
-		int *num = (int *)lst->content;
+		num = (int *)lst->content;
 		ft_printf("%d\n", *num);
 		lst = lst->next;
 	}
 }
 
-char	**split_arguments(int argc, char *argv[])
-{
-	char	**arr;
-	int		i;
-
-	i = 0;
-	if (argc == 2 && ft_strchr(argv[1], ' '))
-	{
-		arr = ft_split(argv[1], ' ');
-	}
-	else
-	{
-		// Warning: arr is not a deep copy, just a shifted pointer.
-		// If you need to modify the content or free it, you should
-		// allocate and copy each string. Otherwise, this shallow copy
-		// is perfectly fine for read-only iteration or processing.
-		arr = argv + 1;
-	}
-	return (arr);
-}
-
-t_list*	initialize(char **arr)
+t_list	*initialize(char **arr)
 {
 	t_list	*list;
 	t_list	*node;
 	int		i;
+	int		*num_ptr;
 
 	list = NULL;
 	i = 0;
 	while (arr[i])
 	{
-		int *num_ptr = malloc(sizeof(int));
+		num_ptr = malloc(sizeof(int));
 		if (!num_ptr)
 			return (NULL);
 		*num_ptr = ft_atoi(arr[i]);
@@ -70,16 +46,19 @@ t_list*	initialize(char **arr)
 	return (list);
 }
 
-int	main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
 	t_list	*a_stack;
 	t_list	*b_stack;
-	char	**args;
 
 	if (argc == 1)
 		return (0);
-	args = split_arguments(argc, argv);
-	a_stack = initialize(args);
+	if (argc == 2 && ft_strchr(argv[1], ' '))
+		argv = ft_split(argv[1], ' ');
+	else
+		argv = argv + 1;
+	validate(argv);
+	a_stack = initialize(argv);
 	b_stack = NULL;
 	print_list(a_stack);
 	//ft_lstclear(&a_stack, free);
