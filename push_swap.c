@@ -6,12 +6,13 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/21 13:31:51 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:39:56 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "push_swap.h"
 
+// Print list for testing purposes only
 void	print_list(t_list *lst)
 {
 	int	*num;
@@ -24,6 +25,7 @@ void	print_list(t_list *lst)
 	}
 }
 
+// Initialize a stack with integers from an array of strings
 t_list	*initialize(char **arr)
 {
 	t_list	*list;

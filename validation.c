@@ -6,18 +6,20 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/21 13:33:20 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:39:56 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "push_swap.h"
 
+// Throw error
 static void	error(void)
 {
 	ft_printf("Error\n");
 	exit(2);
 }
 
+// Checks if string has repeated numbers
 static void	isduplicated(char **arr)
 {
 	int	i;
@@ -37,6 +39,7 @@ static void	isduplicated(char **arr)
 	}
 }
 
+// Checks if character is digit, '+' or '-'
 static int	ft_issigneddigit(int c)
 {
 	if ((c >= '0' && c <= '9') || c == '-' || c == '+')
@@ -46,6 +49,8 @@ static int	ft_issigneddigit(int c)
 	return (0);
 }
 
+// Converts a string into long number.
+// Returns 0 on error.
 static long	ft_atol(const char *str)
 {
 	long	nbr;
@@ -69,7 +74,7 @@ static long	ft_atol(const char *str)
 	return ((nbr * sign));
 }
 
-/* Errors:
+/* Checks for the following errors:
 - Some arguments not being integers
 - Some arguments exceeding the integer limits
 - Presence of duplicates */
