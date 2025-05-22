@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/22 12:07:37 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/22 12:15:17 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -78,8 +78,11 @@ void	validate(char **arr)
 	while (arr[i])
 	{
 		j = 1;
-		if (ft_atol(arr[i]) < INT_MIN || ft_atol(arr[i]) > INT_MAX)
-			error();
+		if (ft_strlen(arr[i]) >= 10)
+		{
+			if (ft_atol(arr[i]) < INT_MIN || ft_atol(arr[i]) > INT_MAX)
+				error();
+		}
 		if (!ft_isvalidnumber(arr[i]))
 			error();
 		while (arr[i + j])
