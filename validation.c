@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/22 11:58:58 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/22 12:07:37 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -19,27 +19,9 @@ static void	error(void)
 	exit(2);
 }
 
-// Checks if array has repeated `int` numbers.
-static void	isduplicated(char **arr)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (arr[i])
-	{
-		j = 1;
-		while (arr[i + j])
-		{
-			if (ft_atoi(arr[i]) == ft_atoi(arr[i + j]))
-				error();
-			j++;
-		}
-		i++;
-	}
-}
-
-// Checks if character is a digit or a `+` or `-` sign.
+// Checks if a string is valid signed or unsigned number.
+// `25`, `-13`, `+96` are valid.
+// `--25`, `-+13`, `9-6`, `87-+` are not valid.
 static int	ft_isvalidnumber(char *str)
 {
 	int	i;
@@ -82,23 +64,30 @@ static long	ft_atol(const char *str)
 }
 
 /* Checks for the following errors:
-- Some arguments not being integers
 - Some arguments exceeding the integer limits
   INT_MIN:	-2.147.483.648
   INT_MAX:	 2.147.483.647
+- Some arguments not being integers
 - Presence of duplicates */
 void	validate(char **arr)
 {
 	int	i;
+	int	j;
 
 	i = 0;
 	while (arr[i])
 	{
+		j = 1;
 		if (ft_atol(arr[i]) < INT_MIN || ft_atol(arr[i]) > INT_MAX)
 			error();
 		if (!ft_isvalidnumber(arr[i]))
 			error();
+		while (arr[i + j])
+		{
+			if (ft_atoi(arr[i]) == ft_atoi(arr[i + j]))
+				error();
+			j++;
+		}
 		i++;
 	}
-	isduplicated(arr);
 }
