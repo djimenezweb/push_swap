@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/21 13:43:11 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/22 11:58:58 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -40,13 +40,20 @@ static void	isduplicated(char **arr)
 }
 
 // Checks if character is a digit or a `+` or `-` sign.
-static int	ft_issigneddigit(int c)
+static int	ft_isvalidnumber(char *str)
 {
-	if (ft_isdigit(c) || c == '-' || c == '+')
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while(str[i])
 	{
-		return (1);
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
 	}
-	return (0);
+	return (1);
 }
 
 // Converts a string into `long` number.
@@ -83,20 +90,14 @@ static long	ft_atol(const char *str)
 void	validate(char **arr)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (arr[i])
 	{
 		if (ft_atol(arr[i]) < INT_MIN || ft_atol(arr[i]) > INT_MAX)
 			error();
-		j = 0;
-		while (arr[i][j])
-		{
-			if (!ft_issigneddigit(arr[i][j]))
-				error();
-			j++;
-		}
+		if (!ft_isvalidnumber(arr[i]))
+			error();
 		i++;
 	}
 	isduplicated(arr);

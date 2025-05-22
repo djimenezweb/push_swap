@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/22 09:42:52 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/22 11:56:55 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -22,10 +22,6 @@ void	print_list(char *title, t_list *lst);
 t_list	*initialize(char **arr);
 
 // Validation
-// void	error(void);
-// void	isdoubled(char **arr);
-// int		ft_issigneddigit(int c);
-// long	ft_atol(const char *str);
 void	validate(char **arr);
 
 // Operations helpers
