@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/22 11:40:02 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/23 13:59:50 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -85,7 +85,7 @@ int	main(int argc, char **argv)
 		free_array_of_strings(argv);
 	print_list("Original:", a_stack);
 	/*ft_swap(&a_stack);
- 	print_list("Swap:", a_stack);
+	print_list("Swap:", a_stack);
 	ft_push(&a_stack, &b_stack);
 	print_list("Push (a):", a_stack);
 	print_list("Push (b):", b_stack);

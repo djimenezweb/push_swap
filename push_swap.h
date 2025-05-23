@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/22 11:56:55 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/23 13:28:08 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -16,6 +16,7 @@
 # include "libft/libft.h"
 # include <limits.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 // Main functions
 void	print_list(char *title, t_list *lst);

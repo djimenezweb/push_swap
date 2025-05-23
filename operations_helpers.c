@@ -1,12 +1,12 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions.c                                     :+:      :+:    :+:   */
+/*   operations_helpers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:30:20 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/22 09:40:00 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/23 13:20:40 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -86,38 +86,3 @@ void	ft_rrotate(t_list **stack)
 	last->next = first;
 	*stack = last;
 }
-
-// Swaps first & last nodes
-/* void	ft_rotate(t_list **stack)
-{
-	t_list	*first;
-	t_list	*second;
-	t_list	*prev_last;
-	t_list	*last;
-
-	if (!stack || !*stack || (*stack)->next == NULL)
-		return ;
-	first = *stack;
-	second = first->next;
-	last = *stack;
-	while (last->next)
-	{
-		prev_last = last;
-		last = last->next;
-	}
-
-	// Edge case: only two nodes
-	if (first->next == last) {
-		ft_swap(stack);
-		return;
-	}
-
-	// Second-to-last points to first
-	prev_last->next = first;
-	// Old head becomes new tail
-	first->next = NULL;
-	// Old tail becomes new head
-	last->next = second;
-	// Update head pointer
-	*stack = last;
-} */
