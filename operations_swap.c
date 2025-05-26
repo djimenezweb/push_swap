@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 09:42:01 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/26 09:44:43 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/26 10:21:53 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -21,7 +21,7 @@ void	sa(t_list **a, t_list **b)
 }
 
 // Swap the first 2 elements at the top of stack `b`
-void	sa(t_list **a, t_list **b)
+void	sb(t_list **a, t_list **b)
 {
 	(void)a;
 	ft_swap(b);
