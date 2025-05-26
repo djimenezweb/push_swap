@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:30:20 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/23 13:20:40 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/26 20:41:30 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -68,14 +68,12 @@ void	ft_rotate(t_list **stack)
 void	ft_rrotate(t_list **stack)
 {
 	t_list	*first;
-	t_list	*second;
 	t_list	*prev_last;
 	t_list	*last;
 
 	if (!stack || !*stack || (*stack)->next == NULL)
 		return ;
 	first = *stack;
-	second = first->next;
 	last = *stack;
 	while (last->next)
 	{
