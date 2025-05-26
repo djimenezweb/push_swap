@@ -1,37 +1,27 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_swap.c                                  :+:      :+:    :+:   */
+/*   operations_push.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 09:42:01 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/26 09:44:43 by danielji         ###   ########.fr       */
+/*   Created: 2025/05/26 09:47:37 by danielji          #+#    #+#             */
+/*   Updated: 2025/05/26 09:52:25 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "push_swap.h"
 
-// Swap the first 2 elements at the top of stack `a`
-void	sa(t_list **a, t_list **b)
+// Take the first element at the top of `b` and put it at the top of `a`.
+void	pa(t_list **a, t_list **b)
 {
-	(void)b;
-	ft_swap(a);
-	ft_printf("sa\n");
+	ft_push(b, a);
+	ft_printf("pa\n");
 }
 
-// Swap the first 2 elements at the top of stack `b`
-void	sa(t_list **a, t_list **b)
+// Take the first element at the top of `a` and put it at the top of `b`.
+void	pb(t_list **a, t_list **b)
 {
-	(void)a;
-	ft_swap(b);
-	ft_printf("sb\n");
-}
-
-// `sa` and `sb` at the same time
-void	ss(t_list **a, t_list **b)
-{
-	ft_swap(a);
-	ft_swap(b);
-	ft_printf("ss\n");
+	ft_push(a, b);
+	ft_printf("pb\n");
 }

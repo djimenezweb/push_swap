@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/23 13:28:08 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/26 10:00:39 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -32,6 +32,16 @@ void	ft_rotate(t_list **stack);
 void	ft_rrotate(t_list **stack);
 
 // Operations
-
+void	sa(t_list **a, t_list **b);
+void	sa(t_list **a, t_list **b);
+void	ss(t_list **a, t_list **b);
+void	pa(t_list **a, t_list **b);
+void	pb(t_list **a, t_list **b);
+void	ra(t_list **a, t_list **b);
+void	rb(t_list **a, t_list **b);
+void	rr(t_list **a, t_list **b);
+void	rra(t_list **a, t_list **b);
+void	rrb(t_list **a, t_list **b);
+void	rrr(t_list **a, t_list **b);
 
 #endif
