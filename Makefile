@@ -4,19 +4,21 @@ CFLAGS	= -Wall -Werror -Wextra -I./libft
 SRC		= operations_helpers.c operations_push.c operations_reverse_rotate.c operations_rotate.c operations_swap.c push_swap.c validation.c
 OBJ		= $(SRC:.c=.o)
 
-all: libft.a $(NAME)
+all: libft/libft.a $(NAME)
 
-libft:
+libft/libft.a:
 	$(MAKE) -C libft
 
-$(NAME): $(OBJ) libft/libft.a
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ)
+	@$(CC) $(CFLAGS) $(OBJ) libft/libft.a -o $(NAME)
 
 clean:
 	@rm -f $(OBJ)
+	$(MAKE) -C libft clean
 
 fclean: clean
 	@rm -f $(NAME)
+	$(MAKE) -C libft fclean
 
 re: fclean all
 
