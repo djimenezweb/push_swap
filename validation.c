@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/22 12:15:17 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/26 12:46:29 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -29,7 +29,7 @@ static int	ft_isvalidnumber(char *str)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	while(str[i])
+	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);
