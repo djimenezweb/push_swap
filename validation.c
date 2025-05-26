@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/26 12:46:29 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:16:28 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -19,7 +19,7 @@ static void	error(void)
 	exit(2);
 }
 
-// Checks if a string is valid signed or unsigned number.
+// Checks if a string is a valid signed or unsigned number.
 // `25`, `-13`, `+96` are valid.
 // `--25`, `-+13`, `9-6`, `87-+` are not valid.
 static int	ft_isvalidnumber(char *str)

@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/26 15:52:50 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:14:20 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -26,7 +26,7 @@ void	print_list(char *title, t_list *lst)
 	}
 }
 
-// Runs through a list and returns 1 if it's ordered, otherwise returns 0.
+// Iterates over a stack and returns 1 if it's ordered, otherwise returns 0.
 int	is_ordered(t_list *stack)
 {
 	while (stack && stack->next)
@@ -38,7 +38,7 @@ int	is_ordered(t_list *stack)
 	return (1);
 }
 
-// Initialize a stack with integers from an array of strings
+// Initialize a stack with integers from an array of strings.
 t_list	*initialize(char **arr)
 {
 	t_list	*list;
