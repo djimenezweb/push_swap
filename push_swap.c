@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/27 09:56:55 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/27 10:21:28 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -54,7 +54,7 @@ void	sort_three(t_list **a, t_list **b)
 		sa(a, b); //213
 		if ((x < y) && (x < z)) // 132
 			ra(a, b);
-		else
+		if ((x > y) && (x > z)) // 321
 			rra(a, b);
 	}
 }
