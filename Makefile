@@ -7,18 +7,21 @@ OBJ		= $(SRC:.c=.o)
 all: libft/libft.a $(NAME)
 
 libft/libft.a:
-	$(MAKE) -C libft
+	@$(MAKE) --no-print-directory -C libft
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) libft/libft.a -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) libft/libft.a -o $(NAME)
+
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
-	$(MAKE) -C libft clean
+	@$(MAKE) --no-print-directory -C libft clean
 
 fclean: clean
 	@rm -f $(NAME)
-	$(MAKE) -C libft fclean
+	@$(MAKE) --no-print-directory -C libft fclean
 
 re: fclean all
 

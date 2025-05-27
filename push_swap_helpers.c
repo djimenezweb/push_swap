@@ -6,14 +6,14 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 21:07:50 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/26 21:09:40 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/27 10:15:18 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "push_swap.h"
 
 // Get content of node, parse it as integer an return it.
-int		parse_content(t_list *node)
+int	get_content(t_list *node)
 {
 	return (*((int *)node->content));
 }
@@ -33,15 +33,14 @@ void	print_list(char *title, t_list *lst)
 	ft_printf("\n");
 }
 
-// Iterates over a stack and returns 1 if it's ordered, otherwise returns 0.
-int	is_sorted(t_list *stack)
+// Iterates over a list and returns 1 if it's ordered, otherwise returns 0.
+int	is_sorted(t_list *node)
 {
-	while (stack && stack->next)
+	while (node && node->next)
 	{
-		//if (*(int *)stack->content > *(int *)stack->next->content)
-		if (parse_content(stack) > parse_content(stack->next))
+		if (get_content(node) > get_content(node->next))
 			return (0);
-		stack = stack->next;
+		node = node->next;
 	}
 	return (1);
 }
