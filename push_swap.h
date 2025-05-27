@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/27 10:16:41 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/27 10:44:34 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -21,6 +21,7 @@
 // Main functions
 t_list	*initialize(char **arr);
 void	sort_three(t_list **a, t_list **b);
+void	sort_five(t_list **a, t_list **b);
 
 // Helpers
 int		get_content(t_list *node);

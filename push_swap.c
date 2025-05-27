@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/27 10:21:28 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/27 10:45:20 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -33,6 +33,12 @@ t_list	*initialize(char **arr)
 		ft_lstadd_back(&list, node);
 	}
 	return (list);
+}
+
+// Sort five numbers in ascending order.
+void	sort_five(t_list **a, t_list **b)
+{
+
 }
 
 // Sort three numbers in ascending order.
@@ -84,9 +90,9 @@ int	main(int argc, char **argv)
 	if (needs_free)
 		free_array_of_strings(argv);
 	
-	ft_printf("Is sorted? %i\n", is_sorted(a_stack));
+	//ft_printf("Is sorted? %i\n", is_sorted(a_stack));
 
-	print_list("Original -> ", a_stack);
+	//print_list("Original -> ", a_stack);
 	while (!is_sorted(a_stack))
 	{
 		if (size == 2)
@@ -94,8 +100,8 @@ int	main(int argc, char **argv)
 		else if (size == 3)
 			sort_three(&a_stack, &b_stack);
 	}
-	print_list("Sorted ---> ", a_stack);
-	ft_printf("Is sorted? %i\n\n", is_sorted(a_stack));
+	//print_list("Sorted ---> ", a_stack);
+	//ft_printf("Is sorted? %i\n\n", is_sorted(a_stack));
 	ft_lstclear(&a_stack, free);
 	ft_lstclear(&b_stack, free);
 	return (0);
