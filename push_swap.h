@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/27 09:42:48 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/27 10:16:41 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -25,7 +25,7 @@ void	sort_three(t_list **a, t_list **b);
 // Helpers
 int		get_content(t_list *node);
 void	print_list(char *title, t_list *lst);
-int		is_sorted(t_list *stack);
+int		is_sorted(t_list *node);
 void	free_array_of_strings(char **arr);
 
 // Validation
