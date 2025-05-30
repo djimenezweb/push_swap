@@ -6,13 +6,13 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 10:02:56 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/30 14:36:41 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/30 14:39:39 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../push_swap.h"
 
-// Get smallest node.
+// Returns the node with the smallest number.
 t_list	*get_smallest(t_list **a)
 {
 	t_list	*temp;

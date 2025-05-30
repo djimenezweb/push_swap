@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/30 14:37:06 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/30 14:40:43 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -59,7 +59,6 @@ int	main(int argc, char **argv)
 	size = ft_lstsize(a_stack);
 	if (needs_free)
 		free_array_of_strings(argv);
-	
 	//print_list("Original -> ", a_stack);
 	while (!is_sorted(a_stack))
 	{
