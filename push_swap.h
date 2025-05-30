@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/27 10:44:34 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/30 11:09:35 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -20,6 +20,8 @@
 
 // Main functions
 t_list	*initialize(char **arr);
+
+// Algorithms
 void	sort_three(t_list **a, t_list **b);
 void	sort_five(t_list **a, t_list **b);
 
@@ -32,21 +34,25 @@ void	free_array_of_strings(char **arr);
 // Validation
 void	validate(char **arr);
 
-// Operations helpers
+// Swap Moves
 void	ft_swap(t_list	**stack);
-void	ft_push(t_list	**src_stack, t_list	**dst_stack);
-void	ft_rotate(t_list **stack);
-void	ft_rrotate(t_list **stack);
-
-// Operations
 void	sa(t_list **a, t_list **b);
 void	sb(t_list **a, t_list **b);
 void	ss(t_list **a, t_list **b);
+
+// Push Moves
+void	ft_push(t_list	**src_stack, t_list	**dst_stack);
 void	pa(t_list **a, t_list **b);
 void	pb(t_list **a, t_list **b);
+
+// Rotate Moves
+void	ft_rotate(t_list **stack);
 void	ra(t_list **a, t_list **b);
 void	rb(t_list **a, t_list **b);
 void	rr(t_list **a, t_list **b);
+
+// Reverse Rotate Moves
+void	ft_rrotate(t_list **stack);
 void	rra(t_list **a, t_list **b);
 void	rrb(t_list **a, t_list **b);
 void	rrr(t_list **a, t_list **b);

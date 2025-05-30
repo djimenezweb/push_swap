@@ -1,7 +1,7 @@
 NAME	= push_swap
 CC		= cc
 CFLAGS	= -Wall -Werror -Wextra -I./libft
-SRC		= operations_helpers.c operations_push.c operations_reverse_rotate.c operations_rotate.c operations_swap.c push_swap.c push_swap_helpers.c validation.c
+SRC		= push_swap.c push_swap_helpers.c algorithms/sort_five.c algorithms/sort_three.c moves/moves_helpers.c moves/moves_push.c moves/moves_reverse_rotate.c moves/moves_rotate.c moves/moves_swap.c validation/validation.c
 OBJ		= $(SRC:.c=.o)
 
 all: libft/libft.a $(NAME)

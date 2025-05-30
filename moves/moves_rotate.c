@@ -1,39 +1,39 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_reverse_rotate.c                        :+:      :+:    :+:   */
+/*   moves_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 09:53:03 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/26 12:46:29 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/30 10:45:04 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-// Shift down all elements of stack `a` by 1.
+// Shift up all elements of stack `a` by 1.
 // The first element becomes the last one.
-void	rra(t_list **a, t_list **b)
+void	ra(t_list **a, t_list **b)
 {
 	(void)b;
-	ft_rrotate(a);
-	ft_printf("rra\n");
+	ft_rotate(a);
+	ft_printf("ra\n");
 }
 
-// Shift down all elements of stack `b` by 1.
+// Shift up all elements of stack `b` by 1.
 // The first element becomes the last one.
-void	rrb(t_list **a, t_list **b)
+void	rb(t_list **a, t_list **b)
 {
 	(void)a;
-	ft_rrotate(b);
-	ft_printf("rrb\n");
+	ft_rotate(b);
+	ft_printf("rb\n");
 }
 
-// `rra` and `rrb` at the same time.
-void	rrr(t_list **a, t_list **b)
+// `ra` and `rb` at the same time.
+void	rr(t_list **a, t_list **b)
 {
-	ft_rrotate(a);
-	ft_rrotate(b);
-	ft_printf("rrr\n");
+	ft_rotate(a);
+	ft_rotate(b);
+	ft_printf("rr\n");
 }

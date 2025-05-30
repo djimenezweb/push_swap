@@ -1,16 +1,16 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_helpers.c                               :+:      :+:    :+:   */
+/*   moves_helpers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:30:20 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/26 20:41:30 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/30 10:45:04 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // Swap the first 2 elements at the top of the stack.
 // Do nothing if there is only one element or none.

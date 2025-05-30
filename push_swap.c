@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/27 10:45:20 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/30 10:50:06 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -33,36 +33,6 @@ t_list	*initialize(char **arr)
 		ft_lstadd_back(&list, node);
 	}
 	return (list);
-}
-
-// Sort five numbers in ascending order.
-void	sort_five(t_list **a, t_list **b)
-{
-
-}
-
-// Sort three numbers in ascending order.
-void	sort_three(t_list **a, t_list **b)
-{
-	int	x;
-	int	y;
-	int	z;
-
-	x = get_content(*a);
-	y = get_content((*a)->next);
-	z = get_content((*a)->next->next);
-	if ((x < y) && (y > z) && (z < x)) // 231
-		rra(a, b);
-	else if ((x > y) && (y < z) && (z < x)) // 312
-		ra(a, b);
-	else
-	{
-		sa(a, b); //213
-		if ((x < y) && (x < z)) // 132
-			ra(a, b);
-		if ((x > y) && (x > z)) // 321
-			rra(a, b);
-	}
 }
 
 // This is where all the magic happens.
@@ -99,6 +69,8 @@ int	main(int argc, char **argv)
 			sa(&a_stack, &b_stack);
 		else if (size == 3)
 			sort_three(&a_stack, &b_stack);
+		else if (size <= 5)
+			sort_five(&a_stack, &b_stack);
 	}
 	//print_list("Sorted ---> ", a_stack);
 	//ft_printf("Is sorted? %i\n\n", is_sorted(a_stack));
