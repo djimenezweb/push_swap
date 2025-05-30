@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/30 13:54:26 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/30 14:37:06 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -61,18 +61,14 @@ int	main(int argc, char **argv)
 		free_array_of_strings(argv);
 	
 	//print_list("Original -> ", a_stack);
-	/*	if (size <= 5)
-		sort_five(&a_stack, &b_stack); */
 	while (!is_sorted(a_stack))
 	{
 		if (size == 2)
 			sa(&a_stack, &b_stack);
 		else if (size == 3)
 			sort_three(&a_stack, &b_stack);
-		else if (size == 4)
-			sort_four(&a_stack, &b_stack);
-		else if (size == 5)
-			sort_five(&a_stack, &b_stack);
+		else if (size <= 5)
+			sort_four_or_five(&a_stack, &b_stack, size);
 	}
 	print_list("Sorted ---> ", a_stack);
 	ft_lstclear(&a_stack, free);

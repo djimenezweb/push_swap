@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/30 13:53:15 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/30 14:36:49 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -23,8 +23,7 @@ t_list	*initialize(char **arr);
 
 // Algorithms
 void	sort_three(t_list **a, t_list **b);
-void	sort_four(t_list **a, t_list **b);
-void	sort_five(t_list **a, t_list **b);
+void	sort_four_or_five(t_list **a, t_list **b, int size);
 
 // Helpers
 int		get_content(t_list *node);
