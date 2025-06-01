@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 10:02:56 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/30 18:27:49 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/01 23:17:18 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -54,17 +54,21 @@ void	sort_three(t_list **a, t_list **b)
 }
 
 // Sort four or five numbers in ascending order.
-void	sort_four_or_five(t_list **a, t_list **b, int size)
+void	basic_sort(t_list **a, t_list **b)
 {
 	t_list	*smallest;
 
-	smallest = get_smallest(a);
-	while (get_content(*a) != get_content(smallest))
-		ra(a, b);
-	pb(a, b);
-	if (!is_sorted(*a) && size == 5)
-		sort_four_or_five(a, b, 4);
-	if (!is_sorted(*a) && size == 4)
+	while (ft_lstsize(*a) > 3)
+	{
+		smallest = get_smallest(a);
+		while (get_content(*a) != get_content(smallest))
+			ra(a, b);
+		pb(a, b);
+	}
+	if (!is_sorted(*a))
 		sort_three(a, b);
-	pa(a, b);
+	while (ft_lstsize(*b) > 0)
+	{
+		pa(a, b);
+	}
 }
