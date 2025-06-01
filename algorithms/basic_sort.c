@@ -1,18 +1,18 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five.c                                        :+:      :+:    :+:   */
+/*   basic_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 10:02:56 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/30 14:42:56 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/30 18:27:49 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../push_swap.h"
 
-// Returns the node with the smallest number.
+// Returns a pointer to the node with the smallest number.
 t_list	*get_smallest(t_list **a)
 {
 	t_list	*temp;

@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/30 14:40:43 by danielji         ###   ########.fr       */
+/*   Updated: 2025/05/30 18:26:01 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -36,6 +36,8 @@ t_list	*initialize(char **arr)
 }
 
 // This is where all the magic happens.
+// Minimal validation (80): 100 random numbers in fewer than 700 operations.
+// Maximum validation: 500 random numbers in no more than 5500 operations.
 int	main(int argc, char **argv)
 {
 	t_list	*a_stack;
@@ -69,7 +71,7 @@ int	main(int argc, char **argv)
 		else if (size <= 5)
 			sort_four_or_five(&a_stack, &b_stack, size);
 	}
-	print_list("Sorted ---> ", a_stack);
+	// print_list("Sorted ---> ", a_stack);
 	ft_lstclear(&a_stack, free);
 	ft_lstclear(&b_stack, free);
 	return (0);
