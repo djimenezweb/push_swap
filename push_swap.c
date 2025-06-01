@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/30 18:26:01 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/01 12:25:32 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -38,6 +38,7 @@ t_list	*initialize(char **arr)
 // This is where all the magic happens.
 // Minimal validation (80): 100 random numbers in fewer than 700 operations.
 // Maximum validation: 500 random numbers in no more than 5500 operations.
+// ARG=$(shuf -i 1-100 | tr '\n' ' '); ./push_swap $ARG | wc -l
 int	main(int argc, char **argv)
 {
 	t_list	*a_stack;
@@ -61,7 +62,8 @@ int	main(int argc, char **argv)
 	size = ft_lstsize(a_stack);
 	if (needs_free)
 		free_array_of_strings(argv);
-	//print_list("Original -> ", a_stack);
+	// print_list("Stack A ---> ", a_stack);
+	// print_list("Stack B ---> ", b_stack);
 	while (!is_sorted(a_stack))
 	{
 		if (size == 2)
@@ -70,8 +72,11 @@ int	main(int argc, char **argv)
 			sort_three(&a_stack, &b_stack);
 		else if (size <= 5)
 			sort_four_or_five(&a_stack, &b_stack, size);
+		else
+			ineffsort(&a_stack, &b_stack);
 	}
-	// print_list("Sorted ---> ", a_stack);
+	print_list("Stack A ---> ", a_stack);
+	// print_list("Stack B ---> ", b_stack);
 	ft_lstclear(&a_stack, free);
 	ft_lstclear(&b_stack, free);
 	return (0);
