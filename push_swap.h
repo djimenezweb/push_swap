@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/01 23:17:38 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/02 00:00:31 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -18,25 +18,21 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// Main functions
-t_list	*initialize(char **arr);
+// Validation
+void	validate(char **arr);
+
+// Helpers
+t_list	*initialize(char **arr, int needs_free);
+char	**split_args(char **argv, int *needs_free);
+int		get_content(t_list *node);
+int		is_sorted(t_list *node);
+void	print_list(char *title, t_list *lst);
 
 // Algorithms
 t_list	*get_smallest(t_list **a);
 void	sort_three(t_list **a, t_list **b);
 void	basic_sort(t_list **a, t_list **b);
-
-// Inefficient sorting algorithm
 void	ineffsort(t_list **a, t_list **b);
-
-// Helpers
-int		get_content(t_list *node);
-void	print_list(char *title, t_list *lst);
-int		is_sorted(t_list *node);
-void	free_array_of_strings(char **arr);
-
-// Validation
-void	validate(char **arr);
 
 // Swap Moves
 void	ft_swap(t_list	**stack);
