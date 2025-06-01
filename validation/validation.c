@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/05/30 15:01:44 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/01 12:25:23 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -71,18 +71,17 @@ static long	ft_atol(const char *str)
 - Presence of duplicates */
 void	validate(char **arr)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	long	nbr;
 
 	i = 0;
 	while (arr[i])
 	{
 		j = 1;
-		if (ft_strlen(arr[i]) >= 10)
-		{
-			if (ft_atol(arr[i]) < INT_MIN || ft_atol(arr[i]) > INT_MAX)
-				error();
-		}
+		nbr = ft_atol(arr[i]);
+		if (ft_strlen(arr[i]) >= 10 && (nbr < INT_MIN || nbr > INT_MAX))
+			error();
 		if (!ft_isvalidnumber(arr[i]))
 			error();
 		while (arr[i + j])
