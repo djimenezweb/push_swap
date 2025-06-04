@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 11:07:04 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 10:26:37 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 21:59:55 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -19,8 +19,8 @@ void	ineffsort(t_stack **a, t_stack **b)
 
 	while (*a)
 	{
-		smallest = get_content(get_smallest(a));
-		while (get_content(*a) != smallest)
+		smallest = (get_smallest(a))->content;
+		while ((*a)->content != smallest)
 		{
 			ra(a, b);
 		}

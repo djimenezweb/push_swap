@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 19:36:07 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:13:39 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,6 +15,7 @@
 // Minimal validation (80): 100 random numbers in fewer than 700 operations.
 // Maximum validation: 500 random numbers in no more than 5500 operations.
 // ARG=$(shuf -i 1-100 | tr '\n' ' '); ./push_swap $ARG | wc -l
+// ARG=$(shuf -i 1-100 | tr '\n' ' '); ./push_swap $ARG | ./checker_linux $ARG
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -35,7 +36,7 @@ int	main(int argc, char **argv)
 	sort_array(arr, size);
 	assign_index(a, size, arr);
 	// print_array(arr, size);
-	//print_list("Stack a: ", a);
+	// print_list("Stack a: ", a);
 	while (!is_sorted(a))
 	{
 		if (size == 2)

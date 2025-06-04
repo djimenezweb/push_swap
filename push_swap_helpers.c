@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 21:07:50 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 12:22:29 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:21:03 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -18,24 +18,16 @@ t_stack	*initialize(char **arr, int needs_free)
 	t_stack			*list;
 	t_stack			*node;
 	unsigned int	i;
-	unsigned int	*index_ptr;
-	int				*num_ptr;
+	int				num;
 
 	list = NULL;
 	i = 0;
 	while (arr[i])
 	{
-		index_ptr = malloc(sizeof(unsigned int));
-		if (!index_ptr)
-			return (NULL);
-		*index_ptr = i;
-		num_ptr = malloc(sizeof(int));
-		if (!num_ptr)
-			return (NULL);
-		*num_ptr = ft_atoi(arr[i]);
+		num = ft_atoi(arr[i]);
 		if (needs_free)
 			free(arr[i]);
-		node = ft_stacknew(num_ptr, index_ptr);
+		node = ft_stacknew(num, i);
 		ft_stackadd_back(&list, node);
 		i++;
 	}
@@ -57,25 +49,13 @@ char	**split_args(char **argv, int *needs_free)
 	return (argv);
 }
 
-// Returns content of node.
-int	get_content(t_stack *node)
-{
-	return (*(node->content));
-}
-
-// Returns index of node.
-int	get_index(t_stack *node)
-{
-	return (*(node->index));
-}
-
 // Print list (for testing purposes only!!)
 void	print_list(char *title, t_stack *lst)
 {
 	ft_printf("%s", title);
 	while (lst)
 	{
-		ft_printf("[%d: %d] ", *(lst->index), *(lst->content));
+		ft_printf("[%d: %d] ", lst->index, lst->content);
 		lst = lst->next;
 	}
 	ft_printf("\n");
@@ -86,7 +66,7 @@ int	is_sorted(t_stack *node)
 {
 	while (node && node->next)
 	{
-		if (get_content(node) > get_content(node->next))
+		if (node->content > node->next->content)
 			return (0);
 		node = node->next;
 	}

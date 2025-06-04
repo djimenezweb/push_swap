@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 18:49:14 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:14:18 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -25,14 +25,13 @@ void	validate(char **arr);
 // Helpers
 t_stack	*initialize(char **arr, int needs_free);
 char	**split_args(char **argv, int *needs_free);
-int		get_content(t_stack *node);
 int		is_sorted(t_stack *node);
 void	print_list(char *title, t_stack *lst);
 
 // Preprocessing
-int *create_array_from_list(t_stack *lst, int size);
-void print_array(int *arr, int size);
-void sort_array(int *arr, int size);
+int		*create_array_from_list(t_stack *lst, int size);
+void	print_array(int *arr, int size);
+void	sort_array(int *arr, int size);
 void	assign_index(t_stack *lst, int size, int *arr);
 
 // Algorithms

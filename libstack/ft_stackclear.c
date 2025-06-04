@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:29:41 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 09:50:06 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:18:27 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -25,7 +25,7 @@ void	ft_stackclear(t_stack **lst, void (*del)(void *))
 	while (current)
 	{
 		next = current->next;
-		ft_stackdelone(current, del);
+		del(current);
 		current = next;
 	}
 	*lst = NULL;

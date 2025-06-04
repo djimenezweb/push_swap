@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 17:41:17 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 19:34:49 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:01:00 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -37,7 +37,7 @@ void	radix_sort(t_stack **a, t_stack **b)
 		while (j < size)
 		{
 			// ft_printf("i = %d, j = %d, *index = %u\n", i, j, *(*a)->index);
-			if (*a && (*a)->index && ((*(*a)->index >> i) & 1))
+			if (*a && (*a)->index && ((*a)->index >> i) & 1)
 				ra(a, b);
 			else
 				pb(a, b);

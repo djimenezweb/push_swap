@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 16:18:31 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 17:34:42 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 21:53:00 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -72,7 +72,7 @@ void	assign_index(t_stack *lst, int size, int *arr)
 	while (lst)
 	{
 		//*(lst->index) = (unsigned int)arr[i];
-		*(lst->index) = get_index_from_sorted_array(arr, size, *(lst->content));
+		lst->index = get_index_from_sorted_array(arr, size, lst->content);
 		i++;
 		lst = lst->next;
 	}
@@ -89,7 +89,7 @@ int *create_array_from_list(t_stack *lst, int size)
 		return (NULL);
 	while(lst)
 	{
-		arr[i] = *(lst->content);
+		arr[i] = lst->content;
 		i++;
 		lst = lst->next;
 	}
