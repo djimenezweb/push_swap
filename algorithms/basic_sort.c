@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 10:02:56 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 10:37:57 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:03:03 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -39,16 +39,16 @@ void	sort_three(t_stack **a, t_stack **b)
 	x = get_content(*a);
 	y = get_content((*a)->next);
 	z = get_content((*a)->next->next);
-	if ((x < y) && (y > z) && (z < x)) // 231
+	if ((x < y) && (y > z) && (z < x))
 		rra(a, b);
-	else if ((x > y) && (y < z) && (z < x)) // 312
+	else if ((x > y) && (y < z) && (z < x))
 		ra(a, b);
 	else
 	{
-		sa(a, b); //213
-		if ((x < y) && (x < z)) // 132
+		sa(a, b);
+		if ((x < y) && (x < z))
 			ra(a, b);
-		if ((x > y) && (x > z)) // 321
+		if ((x > y) && (x > z))
 			rra(a, b);
 	}
 }
