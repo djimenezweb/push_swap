@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:32:36 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 11:42:19 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:22:29 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -21,7 +21,7 @@ t_stack	*ft_stackmap(t_stack *lst, void *(*f)(void *), void (*del)(void *))
 	t_stack			*new_list;
 	t_stack			*new_node;
 	int				*new_content;
-	unsigned int	*new_key;
+	unsigned int	*new_index;
 
 	if (!lst || !f || !del)
 		return (NULL);
@@ -29,8 +29,8 @@ t_stack	*ft_stackmap(t_stack *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		new_content = f(lst->content);
-		new_key = lst->key;
-		new_node = ft_stacknew(new_content, new_key);
+		new_index = lst->index;
+		new_node = ft_stacknew(new_content, new_index);
 		if (!new_node)
 		{
 			del(new_content);
