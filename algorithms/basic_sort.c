@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 10:02:56 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 22:30:12 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:43:29 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,16 +15,16 @@
 // Returns a pointer to the node with the smallest number.
 t_stack	*get_smallest(t_stack **a)
 {
-	t_stack	*temp;
+	t_stack	*current;
 	t_stack	*smallest;
 
-	temp = *a;
+	current = *a;
 	smallest = NULL;
-	while (temp)
+	while (current)
 	{
-		if (!smallest || temp->value < smallest->value)
-			smallest = temp;
-		temp = temp->next;
+		if (!smallest || current->value < smallest->value)
+			smallest = current;
+		current = current->next;
 	}
 	return (smallest);
 }
@@ -39,9 +39,6 @@ void	sort_three(t_stack **a, t_stack **b)
 	x = (*a)->value;
 	y = (*a)->next->value;
 	z = (*a)->next->next->value;
-	// x = get_value(*a);
-	// y = get_value((*a)->next);
-	// z = get_value((*a)->next->next);
 	if ((x < y) && (y > z) && (z < x))
 		rra(a, b);
 	else if ((x > y) && (y < z) && (z < x))
