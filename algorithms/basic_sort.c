@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 10:02:56 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 21:58:22 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:30:12 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -22,7 +22,7 @@ t_stack	*get_smallest(t_stack **a)
 	smallest = NULL;
 	while (temp)
 	{
-		if (!smallest || temp->content < smallest->content)
+		if (!smallest || temp->value < smallest->value)
 			smallest = temp;
 		temp = temp->next;
 	}
@@ -36,12 +36,12 @@ void	sort_three(t_stack **a, t_stack **b)
 	int	y;
 	int	z;
 
-	x = (*a)->content;
-	y = (*a)->next->content;
-	z = (*a)->next->next->content;
-	// x = get_content(*a);
-	// y = get_content((*a)->next);
-	// z = get_content((*a)->next->next);
+	x = (*a)->value;
+	y = (*a)->next->value;
+	z = (*a)->next->next->value;
+	// x = get_value(*a);
+	// y = get_value((*a)->next);
+	// z = get_value((*a)->next->next);
 	if ((x < y) && (y > z) && (z < x))
 		rra(a, b);
 	else if ((x > y) && (y < z) && (z < x))
@@ -64,7 +64,7 @@ void	basic_sort(t_stack **a, t_stack **b)
 	while (ft_stacksize(*a) > 3)
 	{
 		smallest = get_smallest(a);
-		while ((*a)->content != smallest->content)
+		while ((*a)->value != smallest->value)
 			ra(a, b);
 		pb(a, b);
 	}

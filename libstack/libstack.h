@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 13:11:38 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 22:26:18 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:30:26 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -17,12 +17,12 @@
 
 typedef struct s_stack
 {
-	int				content;
+	int				value;
 	unsigned int	index;
 	struct s_stack	*next;
 }					t_stack;
 
-t_stack	*ft_stacknew(int content, unsigned int index);
+t_stack	*ft_stacknew(int value, unsigned int index);
 void	ft_stackadd_front(t_stack **lst, t_stack *new);
 int		ft_stacksize(t_stack *lst);
 t_stack	*ft_stacklast(t_stack *lst);

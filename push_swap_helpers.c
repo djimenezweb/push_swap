@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 21:07:50 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 22:21:03 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 22:30:07 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -55,7 +55,7 @@ void	print_list(char *title, t_stack *lst)
 	ft_printf("%s", title);
 	while (lst)
 	{
-		ft_printf("[%d: %d] ", lst->index, lst->content);
+		ft_printf("[%d: %d] ", lst->index, lst->value);
 		lst = lst->next;
 	}
 	ft_printf("\n");
@@ -66,7 +66,7 @@ int	is_sorted(t_stack *node)
 {
 	while (node && node->next)
 	{
-		if (node->content > node->next->content)
+		if (node->value > node->next->value)
 			return (0);
 		node = node->next;
 	}
