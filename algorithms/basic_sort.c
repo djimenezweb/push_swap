@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 10:02:56 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 10:26:37 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 10:37:57 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -58,7 +58,7 @@ void	basic_sort(t_stack **a, t_stack **b)
 {
 	t_stack	*smallest;
 
-	while (ft_lstsize(*a) > 3)
+	while (ft_stacksize(*a) > 3)
 	{
 		smallest = get_smallest(a);
 		while (get_content(*a) != get_content(smallest))
@@ -67,7 +67,7 @@ void	basic_sort(t_stack **a, t_stack **b)
 	}
 	if (!is_sorted(*a))
 		sort_three(a, b);
-	while (ft_lstsize(*b) > 0)
+	while (ft_stacksize(*b) > 0)
 	{
 		pa(a, b);
 	}

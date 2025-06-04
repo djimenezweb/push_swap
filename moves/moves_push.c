@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 09:47:37 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 10:26:37 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 10:38:30 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -22,7 +22,7 @@ void	ft_push(t_stack **src_stack, t_stack **dst_stack)
 		return ;
 	first = *src_stack;
 	*src_stack = first->next;
-	ft_lstadd_front(dst_stack, first);
+	ft_stackadd_front(dst_stack, first);
 }
 
 // Take the first element at the top of `b` and put it at the top of `a`.

@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 10:29:56 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 10:42:24 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	validate(argv);
 	a = initialize(argv, needs_free);
 	b = NULL;
-	size = ft_lstsize(a);
+	size = ft_stacksize(a);
 	while (!is_sorted(a))
 	{
 		if (size == 2)
@@ -39,7 +39,8 @@ int	main(int argc, char **argv)
 		else
 			ineffsort(&a, &b);
 	}
-	ft_lstclear(&a, free);
-	ft_lstclear(&b, free);
+	print_list("Stack a\n", a);
+	ft_stackclear(&a, free);
+	ft_stackclear(&b, free);
 	return (0);
 }
