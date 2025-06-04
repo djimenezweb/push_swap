@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 09:47:37 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/01 09:47:35 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 10:26:37 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,9 +14,9 @@
 
 // Take the first element at the top of `src` and put it at the top of `dst`.
 // Do nothing if `src` is empty.
-void	ft_push(t_list **src_stack, t_list **dst_stack)
+void	ft_push(t_stack **src_stack, t_stack **dst_stack)
 {
-	t_list	*first;
+	t_stack	*first;
 
 	if (!src_stack || !*src_stack)
 		return ;
@@ -26,14 +26,14 @@ void	ft_push(t_list **src_stack, t_list **dst_stack)
 }
 
 // Take the first element at the top of `b` and put it at the top of `a`.
-void	pa(t_list **a, t_list **b)
+void	pa(t_stack **a, t_stack **b)
 {
 	ft_push(b, a);
 	ft_printf("pa\n");
 }
 
 // Take the first element at the top of `a` and put it at the top of `b`.
-void	pb(t_list **a, t_list **b)
+void	pb(t_stack **a, t_stack **b)
 {
 	ft_push(a, b);
 	ft_printf("pb\n");

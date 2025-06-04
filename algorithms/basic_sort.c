@@ -6,17 +6,17 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 10:02:56 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/01 23:17:18 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 10:26:37 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../push_swap.h"
 
 // Returns a pointer to the node with the smallest number.
-t_list	*get_smallest(t_list **a)
+t_stack	*get_smallest(t_stack **a)
 {
-	t_list	*temp;
-	t_list	*smallest;
+	t_stack	*temp;
+	t_stack	*smallest;
 
 	temp = *a;
 	smallest = NULL;
@@ -30,7 +30,7 @@ t_list	*get_smallest(t_list **a)
 }
 
 // Sort three numbers in ascending order.
-void	sort_three(t_list **a, t_list **b)
+void	sort_three(t_stack **a, t_stack **b)
 {
 	int	x;
 	int	y;
@@ -54,9 +54,9 @@ void	sort_three(t_list **a, t_list **b)
 }
 
 // Sort four or five numbers in ascending order.
-void	basic_sort(t_list **a, t_list **b)
+void	basic_sort(t_stack **a, t_stack **b)
 {
-	t_list	*smallest;
+	t_stack	*smallest;
 
 	while (ft_lstsize(*a) > 3)
 	{

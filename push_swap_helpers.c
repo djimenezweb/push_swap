@@ -6,17 +6,17 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 21:07:50 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/02 00:00:31 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 10:26:37 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "push_swap.h"
 
 // Initialize a stack with integers from an array of strings.
-t_list	*initialize(char **arr, int needs_free)
+t_stack	*initialize(char **arr, int needs_free)
 {
-	t_list	*list;
-	t_list	*node;
+	t_stack	*list;
+	t_stack	*node;
 	int		i;
 	int		*num_ptr;
 
@@ -53,13 +53,13 @@ char	**split_args(char **argv, int *needs_free)
 }
 
 // Get content of node, parse it as integer an return it.
-int	get_content(t_list *node)
+int	get_content(t_stack *node)
 {
 	return (*((int *)node->content));
 }
 
 // Print list (for testing purposes only!!)
-void	print_list(char *title, t_list *lst)
+void	print_list(char *title, t_stack *lst)
 {
 	int	*num;
 
@@ -74,7 +74,7 @@ void	print_list(char *title, t_list *lst)
 }
 
 // Iterates over a list and returns 1 if it's ordered, otherwise returns 0.
-int	is_sorted(t_list *node)
+int	is_sorted(t_stack *node)
 {
 	while (node && node->next)
 	{

@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/02 00:02:10 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 10:29:56 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -17,8 +17,8 @@
 // ARG=$(shuf -i 1-100 | tr '\n' ' '); ./push_swap $ARG | wc -l
 int	main(int argc, char **argv)
 {
-	t_list	*a_stack;
-	t_list	*b_stack;
+	t_stack	*a;
+	t_stack	*b;
 	int		needs_free;
 	int		size;
 
@@ -27,19 +27,19 @@ int	main(int argc, char **argv)
 		return (0);
 	argv = split_args(argv, &needs_free);
 	validate(argv);
-	a_stack = initialize(argv, needs_free);
-	b_stack = NULL;
-	size = ft_lstsize(a_stack);
-	while (!is_sorted(a_stack))
+	a = initialize(argv, needs_free);
+	b = NULL;
+	size = ft_lstsize(a);
+	while (!is_sorted(a))
 	{
 		if (size == 2)
-			sa(&a_stack, &b_stack);
+			sa(&a, &b);
 		else if (size <= 5)
-			basic_sort(&a_stack, &b_stack);
+			basic_sort(&a, &b);
 		else
-			ineffsort(&a_stack, &b_stack);
+			ineffsort(&a, &b);
 	}
-	ft_lstclear(&a_stack, free);
-	ft_lstclear(&b_stack, free);
+	ft_lstclear(&a, free);
+	ft_lstclear(&b, free);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 09:53:03 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/01 09:47:35 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 10:26:37 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,11 +14,11 @@
 
 // Shift up all elements of the stack by 1.
 // The first element becomes the last one.
-void	ft_rotate(t_list **stack)
+void	ft_rotate(t_stack **stack)
 {
-	t_list	*first;
-	t_list	*second;
-	t_list	*last;
+	t_stack	*first;
+	t_stack	*second;
+	t_stack	*last;
 
 	if (!stack || !*stack || (*stack)->next == NULL)
 		return ;
@@ -35,7 +35,7 @@ void	ft_rotate(t_list **stack)
 }
 
 // The first element of stack `a` becomes the last one.
-void	ra(t_list **a, t_list **b)
+void	ra(t_stack **a, t_stack **b)
 {
 	(void)b;
 	ft_rotate(a);
@@ -43,7 +43,7 @@ void	ra(t_list **a, t_list **b)
 }
 
 // The first element of stack `b` becomes the last one.
-void	rb(t_list **a, t_list **b)
+void	rb(t_stack **a, t_stack **b)
 {
 	(void)a;
 	ft_rotate(b);
@@ -51,7 +51,7 @@ void	rb(t_list **a, t_list **b)
 }
 
 // `ra` and `rb` at the same time.
-void	rr(t_list **a, t_list **b)
+void	rr(t_stack **a, t_stack **b)
 {
 	ft_rotate(a);
 	ft_rotate(b);

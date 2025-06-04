@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 09:53:03 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/01 09:47:35 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 10:26:37 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,11 +14,11 @@
 
 // Shift down all elements of stack a by 1.
 // The last element becomes the first one.
-void	ft_rrotate(t_list **stack)
+void	ft_rrotate(t_stack **stack)
 {
-	t_list	*first;
-	t_list	*prev_last;
-	t_list	*last;
+	t_stack	*first;
+	t_stack	*prev_last;
+	t_stack	*last;
 
 	if (!stack || !*stack || (*stack)->next == NULL)
 		return ;
@@ -35,7 +35,7 @@ void	ft_rrotate(t_list **stack)
 }
 
 // The first element of stack `a` becomes the last one.
-void	rra(t_list **a, t_list **b)
+void	rra(t_stack **a, t_stack **b)
 {
 	(void)b;
 	ft_rrotate(a);
@@ -43,7 +43,7 @@ void	rra(t_list **a, t_list **b)
 }
 
 // The first element of stack `b` becomes the last one.
-void	rrb(t_list **a, t_list **b)
+void	rrb(t_stack **a, t_stack **b)
 {
 	(void)a;
 	ft_rrotate(b);
@@ -51,7 +51,7 @@ void	rrb(t_list **a, t_list **b)
 }
 
 // `rra` and `rrb` at the same time.
-void	rrr(t_list **a, t_list **b)
+void	rrr(t_stack **a, t_stack **b)
 {
 	ft_rrotate(a);
 	ft_rrotate(b);
