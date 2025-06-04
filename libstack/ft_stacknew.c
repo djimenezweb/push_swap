@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:39:16 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 09:54:10 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 11:41:46 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,7 +15,7 @@
 /* Allocates memory and returns a new node.
 The `content` variable is initialized with the given parameter `content`.
 The variable `next` is initialized to `NULL`. */
-t_stack	*ft_stacknew(int *content, int *key)
+t_stack	*ft_stacknew(int *content, unsigned int *key)
 {
 	t_stack	*node;
 

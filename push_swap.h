@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 10:29:00 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 11:31:14 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -36,13 +36,13 @@ void	basic_sort(t_stack **a, t_stack **b);
 void	ineffsort(t_stack **a, t_stack **b);
 
 // Swap Moves
-void	ft_swap(t_stack	**stack);
+void	ft_swap(t_stack **stack);
 void	sa(t_stack **a, t_stack **b);
 void	sb(t_stack **a, t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 
 // Push Moves
-void	ft_push(t_stack	**src_stack, t_stack	**dst_stack);
+void	ft_push(t_stack **src_stack, t_stack **dst_stack);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
 

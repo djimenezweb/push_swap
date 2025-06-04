@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:32:36 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 09:58:18 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 11:42:19 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -18,10 +18,10 @@ the function `f`.
 The `del` function is used to delete the content of a node if needed.*/
 t_stack	*ft_stackmap(t_stack *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_stack	*new_list;
-	t_stack	*new_node;
-	int		*new_content;
-	int		*new_key;
+	t_stack			*new_list;
+	t_stack			*new_node;
+	int				*new_content;
+	unsigned int	*new_key;
 
 	if (!lst || !f || !del)
 		return (NULL);

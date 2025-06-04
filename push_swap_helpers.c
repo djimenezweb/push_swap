@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 21:07:50 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 10:43:43 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/04 11:41:46 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,17 +15,17 @@
 // Initialize a stack with integers from an array of strings.
 t_stack	*initialize(char **arr, int needs_free)
 {
-	t_stack	*list;
-	t_stack	*node;
-	int		i;
-	int		*key_ptr;
-	int		*num_ptr;
+	t_stack			*list;
+	t_stack			*node;
+	unsigned int	i;
+	unsigned int	*key_ptr;
+	int				*num_ptr;
 
 	list = NULL;
 	i = 0;
 	while (arr[i])
 	{
-		key_ptr = malloc(sizeof(int));
+		key_ptr = malloc(sizeof(unsigned int));
 		if (!key_ptr)
 			return (NULL);
 		*key_ptr = i;
@@ -66,13 +66,10 @@ int	get_content(t_stack *node)
 // Print list (for testing purposes only!!)
 void	print_list(char *title, t_stack *lst)
 {
-	int	num;
-
 	ft_printf("%s", title);
 	while (lst)
 	{
-		num = *(lst->content);
-		ft_printf("%d ", num);
+		ft_printf("[%d: %d] ", *(lst->key), *(lst->content));
 		lst = lst->next;
 	}
 	ft_printf("\n");
