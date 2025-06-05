@@ -34,7 +34,7 @@ void	ft_rrotate(t_stack **stack)
 	*stack = last;
 }
 
-// The first element of stack `a` becomes the last one.
+// The last element of stack `a` becomes the first one.
 void	rra(t_stack **a, t_stack **b)
 {
 	(void)b;
@@ -42,7 +42,7 @@ void	rra(t_stack **a, t_stack **b)
 	ft_printf("rra\n");
 }
 
-// The first element of stack `b` becomes the last one.
+// The last element of stack `b` becomes the first one.
 void	rrb(t_stack **a, t_stack **b)
 {
 	(void)a;

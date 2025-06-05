@@ -23,6 +23,39 @@ int	is_sorted(t_stack *node)
 	return (1);
 }
 
+void	rev_sort(t_stack **a, t_stack **b)
+{
+	while (ft_stacksize(*a) > 0)
+	{
+		pb(a, b);
+	}
+	while (ft_stacksize(*b) > 0)
+	{
+		rrb(a, b);
+		pa(a, b);
+	}
+/* 	pb(a, b);
+	pb(a, b);
+	sa(a, b);
+	rrr(a, b);
+	pa(a, b);
+	pa(a, b);
+	ra(a, b);
+	ra(a, b); */
+}
+
+
+int	is_revsorted(t_stack *node)
+{
+	while (node && node->next)
+	{
+		if (node->value < node->next->value)
+			return (0);
+		node = node->next;
+	}
+	return (1);
+}
+
 // Minimal validation (80): 100 random numbers in fewer than 700 operations.
 // Maximum validation: 500 random numbers in no more than 5500 operations.
 // ARG=$(shuf -i 1-100 | tr '\n' ' '); ./push_swap $ARG | wc -l
@@ -37,7 +70,10 @@ int	main(int argc, char **argv)
 		return (0);
 	size = initialize(&a, argv);
 	b = NULL;
-	print_list("Stack a: ", a);
+	if (is_revsorted(a))
+	{
+		rev_sort(&a, &b);
+	}
 	while (!is_sorted(a))
 	{
 		if (size == 2)
@@ -46,10 +82,7 @@ int	main(int argc, char **argv)
 			basic_sort(&a, &b);
 		else
 			radix_sort(&a, &b);
-			//ineffsort(&a, &b);
 	}
-	//print_list("Stack a: ", a);
-	//print_list("Stack b: ", b);
 	ft_stackclear(&a, free);
 	ft_stackclear(&b, free);
 	return (0);

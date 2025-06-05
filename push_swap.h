@@ -20,6 +20,7 @@
 # include <unistd.h>
 
 int				is_sorted(t_stack *node);
+int				is_revsorted(t_stack *node);
 
 // Algorithms
 t_stack			*get_smallest(t_stack **a);
