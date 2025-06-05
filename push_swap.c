@@ -25,25 +25,15 @@ int	is_sorted(t_stack *node)
 
 void	rev_sort(t_stack **a, t_stack **b)
 {
-	while (ft_stacksize(*a) > 0)
-	{
-		pb(a, b);
-	}
-	while (ft_stacksize(*b) > 0)
-	{
-		rrb(a, b);
-		pa(a, b);
-	}
-/* 	pb(a, b);
+	pb(a, b);
 	pb(a, b);
 	sa(a, b);
 	rrr(a, b);
 	pa(a, b);
 	pa(a, b);
 	ra(a, b);
-	ra(a, b); */
+	ra(a, b);
 }
-
 
 int	is_revsorted(t_stack *node)
 {
@@ -70,10 +60,8 @@ int	main(int argc, char **argv)
 		return (0);
 	size = initialize(&a, argv);
 	b = NULL;
-	if (is_revsorted(a))
-	{
+	if (is_revsorted(a) && size == 5)
 		rev_sort(&a, &b);
-	}
 	while (!is_sorted(a))
 	{
 		if (size == 2)
