@@ -6,27 +6,22 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 10:02:56 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 22:43:29 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/05 18:29:31 by danielji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// Returns a pointer to the node with the smallest number.
-t_stack	*get_smallest(t_stack **a)
+void	rev_sort(t_stack **a, t_stack **b)
 {
-	t_stack	*current;
-	t_stack	*smallest;
-
-	current = *a;
-	smallest = NULL;
-	while (current)
-	{
-		if (!smallest || current->value < smallest->value)
-			smallest = current;
-		current = current->next;
-	}
-	return (smallest);
+	pb(a, b);
+	pb(a, b);
+	sa(a, b);
+	rrr(a, b);
+	pa(a, b);
+	pa(a, b);
+	ra(a, b);
+	ra(a, b);
 }
 
 // Sort three numbers in ascending order.
@@ -57,13 +52,18 @@ void	sort_three(t_stack **a, t_stack **b)
 void	basic_sort(t_stack **a, t_stack **b)
 {
 	t_stack	*smallest;
+	int		size;
 
-	while (ft_stacksize(*a) > 3)
+	size = ft_stacksize(*a);
+	if (is_revsorted(*a) && size == 5)
+		rev_sort(a, b);
+	while (size > 3)
 	{
 		smallest = get_smallest(a);
 		while ((*a)->value != smallest->value)
 			ra(a, b);
 		pb(a, b);
+		size--;
 	}
 	if (!is_sorted(*a))
 		sort_three(a, b);
