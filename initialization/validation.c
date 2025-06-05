@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/01 12:25:23 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/05 10:05:54 by danielji         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
@@ -68,8 +68,9 @@ static long	ft_atol(const char *str)
   INT_MIN:	-2.147.483.648
   INT_MAX:	 2.147.483.647
 - Some arguments not being integers
-- Presence of duplicates */
-void	validate(char **arr)
+- Presence of duplicates
+Returns size*/
+int	validate(char **arr)
 {
 	int		i;
 	int		j;
@@ -92,4 +93,5 @@ void	validate(char **arr)
 		}
 		i++;
 	}
+	return (i);
 }

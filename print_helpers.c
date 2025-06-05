@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ineffsort.c                                        :+:      :+:    :+:   */
+/*   print_helpers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 11:07:04 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/04 22:30:14 by danielji         ###   ########.fr       */
+/*   Created: 2025/06/05 10:08:25 by danielji          #+#    #+#             */
+/*   Updated: 2025/06/05 10:09:50 by danielji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-// Sort numbers by pushing the smallest in `a` to `b`.
-void	ineffsort(t_stack **a, t_stack **b)
+// Prints index and value of each node in a list
+void	print_list(char *title, t_stack *lst)
 {
-	int	smallest;
+	ft_printf("%s", title);
+	while (lst)
+	{
+		ft_printf("[%d: %d] ", lst->index, lst->value);
+		lst = lst->next;
+	}
+	ft_printf("\n");
+}
 
-	while (*a)
+// Prints array of numbers
+void	print_array(int *arr, int size)
+{
+	int	i;
+
+	i = 0;
+	ft_printf("Array: ");
+	while (i < size)
 	{
-		smallest = (get_smallest(a))->value;
-		while ((*a)->value != smallest)
-		{
-			ra(a, b);
-		}
-		pb(a, b);
+		ft_printf("%i, ", arr[i]);
+		i++;
 	}
-	while (*b)
-	{
-		pa(a, b);
-	}
+	ft_printf("\n");
 }
