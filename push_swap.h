@@ -38,7 +38,7 @@ t_stack	*numarr_to_list(int *arr, int size);
 int		initialize(t_stack **a, char *argv[]);
 int		get_index(int *sorted_array, int size, int value);
 void	assign_index(t_stack *lst, int size, int *arr);
-void	sort_array(int *arr, int size);
+void	bubble_sort(int *arr, int size);
 
 // Swap Moves
 void	ft_swap(t_stack **stack);

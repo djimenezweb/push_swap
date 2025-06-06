@@ -91,7 +91,7 @@ int	initialize(t_stack **a, char *argv[])
 	size = validate(argv);
 	num_arr = strarr_to_numarr(argv, needs_free);
 	*a = numarr_to_list(num_arr, size);
-	sort_array(num_arr, size);
+	bubble_sort(num_arr, size);
 	assign_index(*a, size, num_arr);
 	free(num_arr);
 	return (size);

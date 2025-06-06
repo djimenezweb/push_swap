@@ -12,8 +12,8 @@
 
 #include "../push_swap.h"
 
-// Searches for `value` in a sorted array and returns its index (binary search)
-// or `-1` if none is found.
+// Searches for `value` in a sorted array and returns its
+// index (binary search) or `-1` if none is found.
 int	get_index(int *sorted_array, int size, int value)
 {
 	int	low;
@@ -35,53 +35,28 @@ int	get_index(int *sorted_array, int size, int value)
 	return (-1);
 }
 
-// Sorts an array of integers by comparing each integer
-// with every other integer and swapping them if needed.
-// PROBAR A CAMBIARLO A UN BUBBLE SORT??????
-void	sort_array(int *arr, int size)
+// Sorts an array of integers by comparing each integer with
+// its adjacent and swapping them if needed (bubble sort).
+void	bubble_sort(int *arr, int size)
 {
 	int	i;
 	int	j;
 	int	temp;
 
 	i = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
 		j = 0;
-		while (j < size)
+		while (j < size - 1)
 		{
-			if (arr[j] > arr[i])
+			if (arr[j] > arr[j + 1])
 			{
-				temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
 			}
 			j++;
 		}
 		i++;
 	}
 }
-
-/* void	sort_array(int *arr, int size)
-{
-	int	i;
-	int	j;
-	int	temp;
-
-	i = 0;
-	while (i < size)
-	{
-		j = 0;
-		while (j < size)
-		{
-			if (arr[j] > arr[i])
-			{
-				temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
-} */
