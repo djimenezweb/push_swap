@@ -12,6 +12,11 @@
 
 #include "../push_swap.h"
 
+/* Returns number of bits needed to represent the integer `max` in binary
+excluding leading zeros. For example:
+- 3 is `11` in binary (2 bits)
+- 255 is `11111111` in binary (8 bits)
+- 256 is `100000000` in binary (9 bits) */
 int	count_bits(int max)
 {
 	int	bits;
@@ -22,6 +27,9 @@ int	count_bits(int max)
 	return (bits);
 }
 
+/* Sorts elements based on the binary digits of their indices, starting
+from the least significant digit (rightmost) to the most significant
+digit (leftmost). */
 void	radix_sort(t_stack **a, t_stack **b)
 {
 	int	i;
