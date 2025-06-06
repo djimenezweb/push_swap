@@ -12,6 +12,17 @@
 
 #include "../push_swap.h"
 
+// Assigns an index to a number that represents its position in a sorted list.
+void	assign_index(t_stack *lst, int size, int *arr)
+{
+	while (lst)
+	{
+		lst->index = (unsigned int)get_index(arr, size, lst->value);
+		lst = lst->next;
+	}
+}
+
+// Takes an array of strings and returns an array of integers.
 int	*strarr_to_numarr(char **str_arr, int needs_free)
 {
 	int	i;
@@ -36,6 +47,8 @@ int	*strarr_to_numarr(char **str_arr, int needs_free)
 	return (num_arr);
 }
 
+// Takes an array of integers and returns a list
+// of nodes with that number as `value`.
 t_stack	*numarr_to_list(int *arr, int size)
 {
 	t_stack			*list;
@@ -53,6 +66,14 @@ t_stack	*numarr_to_list(int *arr, int size)
 	return (list);
 }
 
+/* Initializes stack `a`:
+- Splits program arguments (if needed)
+- Validates arguments
+- Creates an array of integers from the arguments
+- Creates a stack from that array of integers
+- Sorts array of integers
+- Assigns index to each integer
+- Returns size of stack */
 int	initialize(t_stack **a, char *argv[])
 {
 	int	*num_arr;

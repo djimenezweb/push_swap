@@ -38,8 +38,7 @@ static int	ft_isvalidnumber(char *str)
 	return (1);
 }
 
-// Converts a string into `long` number.
-// Returns `0` on error.
+// Converts a string into `long` number. Returns `0` on error.
 static long	ft_atol(const char *str)
 {
 	long	nbr;
@@ -63,13 +62,10 @@ static long	ft_atol(const char *str)
 	return ((nbr * sign));
 }
 
-/* Checks for the following errors:
-- Some arguments exceeding the integer limits
-  INT_MIN:	-2.147.483.648
-  INT_MAX:	 2.147.483.647
+/* Checks for the following errors and returns `size`:
+- Some arguments exceeding `INT_MIN` and `INT_MAX`
 - Some arguments not being integers
-- Presence of duplicates
-Returns size*/
+- Presence of duplicates*/
 int	validate(char **arr)
 {
 	int		i;
