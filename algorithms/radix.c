@@ -45,7 +45,7 @@ void	radix_sort(t_stack **a, t_stack **b)
 		j = 0;
 		while (j < size)
 		{
-			if (*a && (*a)->index && ((*a)->index >> i) & 1)
+			if (*a && (((*a)->index >> i) & 1))
 				ra(a, b);
 			else
 				pb(a, b);
