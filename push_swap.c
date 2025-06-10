@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 		return (0);
 	size = initialize(&a, argv);
 	b = NULL;
-	while (!is_sorted(a))
+	if (!is_sorted(a))
 	{
 		if (size == 2)
 			sa(&a, &b);
