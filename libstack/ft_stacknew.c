@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_stacknew.c                                      :+:      :+:    :+:   */
@@ -6,15 +6,16 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:39:16 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/10 23:43:21 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/11 01:24:15 by danielji         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "libstack.h"
 
 /* Allocates memory and returns a new node.
-The `value` variable is initialized with the given parameter `value`.
-The variable `next` is initialized to `NULL`. */
+- `value` is initialized with the given parameter `value`.
+- `index` is initialized to `-1`. 
+- `next` is initialized to `NULL`. */
 t_stack	*ft_stacknew(int value)
 {
 	t_stack	*node;
@@ -23,7 +24,7 @@ t_stack	*ft_stacknew(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
-	node->index = UINT_MAX;
+	node->index = -1;
 	node->next = NULL;
 	return (node);
 }

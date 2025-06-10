@@ -1,7 +1,7 @@
 NAME	= push_swap
 CC		= cc
 CFLAGS	= -Wall -Werror -Wextra -I./libft -I./libstack
-SRC		= push_swap.c push_swap_helpers.c algorithms/basic_sort.c algorithms/radix.c initialization/array_sort.c initialization/initialization.c initialization/validation.c moves/push.c moves/reverse_rotate.c moves/rotate.c moves/swap.c
+SRC		= push_swap.c push_swap_helpers.c algorithms/basic_sort.c algorithms/radix.c initialization/initialization.c initialization/validation.c moves/push.c moves/reverse_rotate.c moves/rotate.c moves/swap.c
 OBJ		= $(SRC:.c=.o)
 DEPS	= libft/libft.a libstack/libstack.a
 

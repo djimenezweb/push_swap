@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   initialization.c                                   :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 09:27:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/10 23:45:28 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/11 01:24:33 by danielji         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
@@ -46,7 +46,7 @@ t_stack	*get_smallest_no_index(t_stack *a)
 	smallest = NULL;
 	while (current)
 	{
-		if (current->index == UINT_MAX)
+		if (current->index == -1)
 		{
 			if (!smallest || current->value < smallest->value)
 				smallest = current;
@@ -56,6 +56,7 @@ t_stack	*get_smallest_no_index(t_stack *a)
 	return (smallest);
 }
 
+// Assigns an index to a number that represents its position in a sorted list.
 void	assign_index(t_stack *a)
 {
 	unsigned int	i;
@@ -105,5 +106,4 @@ void	initialize(t_stack **a, int argc, char **argv)
 		i++;
 		free_array(arguments);
 	}
-	assign_index(*a);
 }
