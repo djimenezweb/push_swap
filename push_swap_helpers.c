@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap_helpers.c                                :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 18:01:44 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/05 18:04:02 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/10 23:04:59 by danielji         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "push_swap.h"
 
@@ -37,7 +37,24 @@ int	is_revsorted(t_stack *node)
 }
 
 // Returns a pointer to the node with the smallest number.
-t_stack	*get_smallest(t_stack **a)
+t_stack	*get_smallest(t_stack *a)
+{
+	t_stack	*current;
+	t_stack	*smallest;
+
+	current = a;
+	smallest = NULL;
+	while (current)
+	{
+		if (!smallest || current->value < smallest->value)
+			smallest = current;
+		current = current->next;
+	}
+	return (smallest);
+}
+
+/* // Returns a pointer to the node with the smallest number.
+t_stack	*get_smallest2(t_stack **a)
 {
 	t_stack	*current;
 	t_stack	*smallest;
@@ -51,4 +68,4 @@ t_stack	*get_smallest(t_stack **a)
 		current = current->next;
 	}
 	return (smallest);
-}
+} */

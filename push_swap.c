@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:02:54 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/10 21:16:25 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/10 23:32:35 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -19,7 +19,7 @@ void	printlist(t_stack *list)
 	current = list;
 	while (current)
 	{
-		ft_printf("%d ", current->value);
+		ft_printf("[%d: %d] ", current->index, current->value);
 		current = current->next;
 	}
 }
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+	t_stack	*smallest;
 	int		size;
 
 	if (argc == 1)
@@ -49,7 +50,8 @@ int	main(int argc, char **argv)
 			radix_sort(&a, &b);
 	}
 	*/
-	ft_printf("Size: %d\n", size);
+	smallest = get_smallest(a);
+	ft_printf("Size: %d, Smallest: %d\n", size, smallest->value);
 	printlist(a);
 	ft_stackclear(&a, free);
 	ft_stackclear(&b, free);

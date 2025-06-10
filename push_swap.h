@@ -6,7 +6,7 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/10 21:11:56 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/10 23:04:59 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -22,7 +22,7 @@
 // Helpers
 int		is_sorted(t_stack *node);
 int		is_revsorted(t_stack *node);
-t_stack	*get_smallest(t_stack **a);
+t_stack	*get_smallest(t_stack *a);
 
 // Algorithms
 void	sort_three(t_stack **a, t_stack **b);
