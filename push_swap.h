@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:24:12 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/05 11:52:48 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/10 21:11:56 by danielji         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -32,13 +32,25 @@ void	radix_sort(t_stack **a, t_stack **b);
 void	rev_sort(t_stack **a, t_stack **b);
 
 // Initialization
-int		validate(char **arr);
-int		*strarr_to_numarr(char **str_arr, int needs_free);
-t_stack	*numarr_to_list(int *arr, int size);
-int		initialize(t_stack **a, char *argv[]);
-int		get_index(int *sorted_array, int size, int value);
-void	assign_index(t_stack *lst, int size, int *arr);
-void	bubble_sort(int *arr, int size);
+void	free_array(char **arr);
+void	free_and_error(char **arr, t_stack **stack);
+void	initialize(t_stack **a, int argc, char **argv);
+int		ft_isvalidnumber(char *str);
+long	ft_atol(const char *str);
+
+// Validation
+//int		ft_isvalidnumber(char *str);
+//void	error(void);
+//long	ft_atol(const char *str);
+
+// Initialization
+//int		validate(char **arr);
+//int		*strarr_to_numarr(char **str_arr, int needs_free);
+//t_stack	*numarr_to_list(int *arr, int size);
+//int		initialize(t_stack **a, char *argv[]);
+//int		get_index(int *sorted_array, int size, int value);
+//void	assign_index(t_stack *lst, int size, int *arr);
+//void	bubble_sort(int *arr, int size);
 
 // Swap Moves
 void	ft_swap(t_stack **stack);

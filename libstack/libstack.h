@@ -22,7 +22,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-t_stack	*ft_stacknew(int value, unsigned int index);
+t_stack	*ft_stacknew(int value);
 void	ft_stackadd_front(t_stack **lst, t_stack *new);
 int		ft_stacksize(t_stack *lst);
 t_stack	*ft_stacklast(t_stack *lst);

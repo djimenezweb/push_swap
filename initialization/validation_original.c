@@ -1,16 +1,23 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.c                                       :+:      :+:    :+:   */
+/*   validation_original.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:18:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/10 21:11:38 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/10 21:09:44 by danielji         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../push_swap.h"
+
+// Throws error and exits.
+void	error(void)
+{
+	ft_putstr_fd("Error\n", 2);
+	exit(2);
+}
 
 // Checks if a string is a valid signed or unsigned number.
 // `25`, `-13`, `+96` are valid.
@@ -53,4 +60,34 @@ long	ft_atol(const char *str)
 		str++;
 	}
 	return ((nbr * sign));
+}
+
+/* Checks for the following errors and returns `size`:
+- Some arguments exceeding `INT_MIN` and `INT_MAX`
+- Some arguments not being integers
+- Presence of duplicates*/
+int	validate(char **arr)
+{
+	int		i;
+	int		j;
+	long	nbr;
+
+	i = 0;
+	while (arr[i])
+	{
+		j = 1;
+		nbr = ft_atol(arr[i]);
+		if (ft_strlen(arr[i]) >= 10 && (nbr < INT_MIN || nbr > INT_MAX))
+			error();
+		if (!ft_isvalidnumber(arr[i]))
+			error();
+		while (arr[i + j])
+		{
+			if (ft_atoi(arr[i]) == ft_atoi(arr[i + j]))
+				error();
+			j++;
+		}
+		i++;
+	}
+	return (i);
 }

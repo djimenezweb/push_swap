@@ -15,7 +15,7 @@
 /* Allocates memory and returns a new node.
 The `value` variable is initialized with the given parameter `value`.
 The variable `next` is initialized to `NULL`. */
-t_stack	*ft_stacknew(int value, unsigned int index)
+t_stack	*ft_stacknew(int value)
 {
 	t_stack	*node;
 
@@ -23,7 +23,6 @@ t_stack	*ft_stacknew(int value, unsigned int index)
 	if (!node)
 		return (NULL);
 	node->value = value;
-	node->index = index;
 	node->next = NULL;
 	return (node);
 }

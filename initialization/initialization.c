@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   initialization.c                                   :+:      :+:    :+:   */
@@ -6,93 +6,66 @@
 /*   By: danielji <danielji@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 09:27:10 by danielji          #+#    #+#             */
-/*   Updated: 2025/06/05 11:50:11 by danielji         ###   ########.fr       */
+/*   Updated: 2025/06/10 21:25:06 by danielji         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "../push_swap.h"
 
-// Assigns an index to a number that represents its position in a sorted list.
-void	assign_index(t_stack *lst, int size, int *arr)
-{
-	while (lst)
-	{
-		lst->index = (unsigned int)get_index(arr, size, lst->value);
-		lst = lst->next;
-	}
-}
-
-// Takes an array of strings and returns an array of integers.
-int	*strarr_to_numarr(char **str_arr, int needs_free)
+// Iterates through an array of strings, frees each string and the array.
+void	free_array(char **arr)
 {
 	int	i;
-	int	*num_arr;
 
 	i = 0;
-	while (str_arr[i])
-		i++;
-	num_arr = malloc(sizeof(int) * i);
-	if (!num_arr)
-		return (NULL);
-	i = 0;
-	while (str_arr[i])
+	while (arr[i])
 	{
-		num_arr[i] = ft_atoi(str_arr[i]);
-		if (needs_free)
-			free(str_arr[i]);
+		free(arr[i]);
 		i++;
 	}
-	if (needs_free)
-		free(str_arr);
-	return (num_arr);
+	free(arr);
 }
 
-// Takes an array of integers and returns a list
-// of nodes with that number as `value`.
-t_stack	*numarr_to_list(int *arr, int size)
+// Frees array and list, prints error message and exits.
+void	free_and_error(char **arr, t_stack **stack)
 {
-	t_stack			*list;
-	t_stack			*node;
-	unsigned int	i;
-
-	list = NULL;
-	i = 0;
-	while (i < (unsigned int)size)
-	{
-		node = ft_stacknew(arr[i], i);
-		ft_stackadd_back(&list, node);
-		i++;
-	}
-	return (list);
+	free_array(arr);
+	ft_stackclear(stack, free);
+	ft_putstr_fd("Error\n", 2);
+	exit(2);
 }
 
-/* Initializes stack `a`:
-- Splits program arguments (if needed)
-- Validates arguments
-- Creates an array of integers from the arguments
-- Creates a stack from that array of integers
-- Sorts array of integers
-- Assigns index to each integer
-- Returns size of stack */
-int	initialize(t_stack **a, char *argv[])
+/* Initializes stack:
+- Splits program arguments
+- Checks if argument is not an integer
+- Checks if argument exceeds `INT_MIN` and `INT_MAX`
+- Creates new node and adds it to the list */
+// TO DO: CHECK FOR DUPLICATES; ASSIGN INDICES
+void	initialize(t_stack **a, int argc, char **argv)
 {
-	int	*num_arr;
-	int	needs_free;
-	int	size;
+	t_stack	*node;
+	int		i;
+	int		j;
+	long	value;
+	char	**arguments;
 
-	needs_free = 0;
-	if (ft_strchr(argv[1], ' '))
+	i = 1;
+	while (i < argc)
 	{
-		argv = ft_split(argv[1], ' ');
-		needs_free = 1;
+		arguments = ft_split(argv[i], ' ');
+		j = 0;
+		while (arguments[j])
+		{
+			if (!ft_isvalidnumber(arguments[j]))
+				return (free_and_error(arguments, a));
+			value = ft_atol(arguments[j]);
+			if ((value < INT_MIN || value > INT_MAX))
+				return (free_and_error(arguments, a));
+			node = ft_stacknew((int)value);
+			ft_stackadd_back(a, node);
+			j++;
+		}
+		i++;
+		free_array(arguments);
 	}
-	else
-		argv = argv + 1;
-	size = validate(argv);
-	num_arr = strarr_to_numarr(argv, needs_free);
-	*a = numarr_to_list(num_arr, size);
-	bubble_sort(num_arr, size);
-	assign_index(*a, size, num_arr);
-	free(num_arr);
-	return (size);
 }
