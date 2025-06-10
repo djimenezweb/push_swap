@@ -56,7 +56,10 @@ void	basic_sort(t_stack **a, t_stack **b)
 
 	size = ft_stacksize(*a);
 	if (is_revsorted(*a) && size == 5)
+	{
 		rev_sort(a, b);
+		return ;
+	}
 	while (size > 3)
 	{
 		smallest = get_smallest(a);
