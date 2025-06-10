@@ -12,8 +12,6 @@
 
 #include "push_swap.h"
 
-// Minimal validation (80): 100 random numbers in fewer than 700 operations.
-// Maximum validation: 500 random numbers in no more than 5500 operations.
 // ARG=$(shuf -i 1-100 | tr '\n' ' '); ./push_swap $ARG | wc -l
 // ARG=$(shuf -i 1-100 | tr '\n' ' '); ./push_swap $ARG | ./checker_linux $ARG
 int	main(int argc, char **argv)
