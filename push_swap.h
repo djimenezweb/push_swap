@@ -28,18 +28,20 @@ t_stack	*get_smallest(t_stack *a);
 void	rev_sort(t_stack **a, t_stack **b);
 void	sort_three(t_stack **a, t_stack **b);
 void	basic_sort(t_stack **a, t_stack **b);
-int		count_bits(int max);
+int		count_bits(int num);
 void	radix_sort(t_stack **a, t_stack **b);
 
 // Initialization
-void	are_repeated(t_stack **stack);
-void	free_array(char **arr);
-void	free_and_exit(char **arr, t_stack **stack);
 t_stack	*get_unindexed_smallest(t_stack *a);
 void	assign_index(t_stack *a);
 void	initialize(t_stack **a, int argc, char **argv);
+
+// Validation
+void	free_array(char **arr);
+void	free_and_exit(char **arr, t_stack **stack);
 int		ft_isvalidnumber(char *str);
 long	ft_atol(const char *str);
+void	are_repeated(t_stack **stack);
 
 // Swap Moves
 void	ft_swap(t_stack **stack);

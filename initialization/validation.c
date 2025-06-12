@@ -29,8 +29,10 @@ void	free_array(char **arr)
 // Frees array and list, prints error message and exits.
 void	free_and_exit(char **arr, t_stack **stack)
 {
-	free_array(arr);
-	ft_stackclear(stack, free);
+	if (arr)
+		free_array(arr);
+	if (stack)
+		ft_stackclear(stack, free);
 	ft_putstr_fd("Error\n", 2);
 	exit(2);
 }
@@ -95,11 +97,7 @@ void	are_repeated(t_stack **stack)
 		while (node)
 		{
 			if (current->value == node->value)
-			{
-				ft_stackclear(stack, free);
-				ft_putstr_fd("Error\n", 2);
-				exit(2);
-			}
+				free_and_exit(NULL, stack);
 			node = node->next;
 		}
 		current = current->next;

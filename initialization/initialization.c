@@ -50,11 +50,12 @@ void	assign_index(t_stack *a)
 	}
 }
 
-/* Initializes stack:
+/* Initializes and validates stack:
 - Splits program arguments
 - Checks if argument is not an integer
 - Checks if argument exceeds `INT_MIN` and `INT_MAX`
-- Creates new node and adds it to the list */
+- Creates new node and adds it to the list
+- Checks for repeated numbers */
 void	initialize(t_stack **a, int argc, char **argv)
 {
 	int		i;
