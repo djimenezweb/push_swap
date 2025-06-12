@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-/* Copies up to `size - 1` characters from the NULL-terminated string `src`
-to `dst`, NULL-terminating the result.
-Returns the total length of the string it tried to create, that means the
-length of `src`. */
+/* Copies up to `size - 1` characters from the NULL-terminated
+string `src` to `dst`, NULL-terminating the result.
+Returns the total length of the string it tried to create,
+that means the length of `src`. */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
 	size_t	i;

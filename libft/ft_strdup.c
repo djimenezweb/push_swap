@@ -12,8 +12,8 @@
 
 #include "libft.h"
 
-/* Returns a pointer to a new string which is a duplicate of the string `s`
-or `NULL` if insufficient memory was available */
+/* Returns a pointer to a new string which is a duplicate of the
+string `s` or `NULL` if insufficient memory was available */
 char	*ft_strdup(const char *str)
 {
 	char	*dup;

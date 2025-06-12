@@ -12,8 +12,8 @@
 
 #include "libft.h"
 
-/* Allocates memory and returns a new string, which is the result of
-concatenating `s1` and `s2`.*/
+/* Allocates memory and returns a new string, which
+is the result of concatenating `s1` and `s2`.*/
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len;

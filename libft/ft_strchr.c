@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Returns a pointer to the first occurrence of the character `c` in the
-string `s` or `NULL` if the character is not found.
-The terminating null byte is considered part of the string, so that if `c`
-is specified as `'\0'`, it returns a pointer to the terminator.*/
+/* Returns a pointer to the first occurrence of the character `c`
+in the string `s` or `NULL` if the character is not found.
+The terminating null byte is considered part of the string, so that
+if `c` is specified as `'\0'`, it returns a pointer to the terminator.*/
 char	*ft_strchr(const char *str, int c)
 {
 	while (*str != '\0')
