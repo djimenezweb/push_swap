@@ -32,9 +32,10 @@ int		count_bits(int max);
 void	radix_sort(t_stack **a, t_stack **b);
 
 // Initialization
+void	are_repeated(t_stack **stack);
 void	free_array(char **arr);
-void	free_and_error(char **arr, t_stack **stack);
-t_stack	*get_smallest_no_index(t_stack *a);
+void	free_and_exit(char **arr, t_stack **stack);
+t_stack	*get_unindexed_smallest(t_stack *a);
 void	assign_index(t_stack *a);
 void	initialize(t_stack **a, int argc, char **argv);
 int		ft_isvalidnumber(char *str);

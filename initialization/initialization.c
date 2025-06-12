@@ -12,32 +12,9 @@
 
 #include "../push_swap.h"
 
-// Iterates through an array of strings, frees each string and the array.
-void	free_array(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
-}
-
-// Frees array and list, prints error message and exits.
-void	free_and_error(char **arr, t_stack **stack)
-{
-	free_array(arr);
-	ft_stackclear(stack, free);
-	ft_putstr_fd("Error\n", 2);
-	exit(2);
-}
-
 // Returns a pointer to the node with the smallest value
 // that doesn't hold an index yet.
-t_stack	*get_smallest_no_index(t_stack *a)
+t_stack	*get_unindexed_smallest(t_stack *a)
 {
 	t_stack	*current;
 	t_stack	*smallest;
@@ -65,7 +42,7 @@ void	assign_index(t_stack *a)
 	i = 0;
 	while (1)
 	{
-		smallest = get_smallest_no_index(a);
+		smallest = get_unindexed_smallest(a);
 		if (!smallest)
 			return ;
 		smallest->index = i;
@@ -78,10 +55,8 @@ void	assign_index(t_stack *a)
 - Checks if argument is not an integer
 - Checks if argument exceeds `INT_MIN` and `INT_MAX`
 - Creates new node and adds it to the list */
-// TO DO: CHECK FOR DUPLICATES
 void	initialize(t_stack **a, int argc, char **argv)
 {
-	t_stack	*node;
 	int		i;
 	int		j;
 	long	value;
@@ -95,15 +70,15 @@ void	initialize(t_stack **a, int argc, char **argv)
 		while (arguments[j])
 		{
 			if (!ft_isvalidnumber(arguments[j]))
-				return (free_and_error(arguments, a));
+				return (free_and_exit(arguments, a));
 			value = ft_atol(arguments[j]);
 			if ((value < INT_MIN || value > INT_MAX))
-				return (free_and_error(arguments, a));
-			node = ft_stacknew((int)value);
-			ft_stackadd_back(a, node);
+				return (free_and_exit(arguments, a));
+			ft_stackadd_back(a, ft_stacknew((int)value));
 			j++;
 		}
 		i++;
 		free_array(arguments);
 	}
+	are_repeated(a);
 }

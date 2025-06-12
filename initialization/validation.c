@@ -12,6 +12,29 @@
 
 #include "../push_swap.h"
 
+// Iterates through an array of strings, frees each string and the array.
+void	free_array(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
+
+// Frees array and list, prints error message and exits.
+void	free_and_exit(char **arr, t_stack **stack)
+{
+	free_array(arr);
+	ft_stackclear(stack, free);
+	ft_putstr_fd("Error\n", 2);
+	exit(2);
+}
+
 // Checks if a string is a valid signed or unsigned number.
 // `25`, `-13`, `+96` are valid.
 // `--25`, `-+13`, `9-6`, `87-+` are not valid.
@@ -57,4 +80,28 @@ long	ft_atol(const char *str)
 		str++;
 	}
 	return ((nbr * sign));
+}
+
+// Checks for duplicate numbers
+void	are_repeated(t_stack **stack)
+{
+	t_stack	*current;
+	t_stack	*node;
+
+	current = *stack;
+	while (current && current->next)
+	{
+		node = current->next;
+		while (node)
+		{
+			if (current->value == node->value)
+			{
+				ft_stackclear(stack, free);
+				ft_putstr_fd("Error\n", 2);
+				exit(2);
+			}
+			node = node->next;
+		}
+		current = current->next;
+	}
 }
