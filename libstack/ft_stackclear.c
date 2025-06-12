@@ -12,8 +12,9 @@
 
 #include "libstack.h"
 
-/* Deletes and frees the given node and all its successors, using the
-function `del` and `free(3)`. Finally, set the pointer to the list to `NULL`.*/
+/* Deletes and frees the given node and all its successors,
+using the function `del` and `free(3)`.
+Finally, set the pointer to the list to `NULL`.*/
 void	ft_stackclear(t_stack **lst, void (*del)(void *))
 {
 	t_stack	*current;
